@@ -66,9 +66,19 @@ delayList = [
 1200
 ];
 
-
+// 10 runs total
 let delayListRandomized = jsPsych.randomization.repeat(delayList, 1); //shuffled array no repeats
 
+let delayListRandomizedRun1 = jsPsych.randomization.repeat(delayList, 1); //shuffled array no repeats
+let delayListRandomizedRun2 = jsPsych.randomization.repeat(delayList, 1); //shuffled array no repeats
+let delayListRandomizedRun3 = jsPsych.randomization.repeat(delayList, 1); //shuffled array no repeats
+let delayListRandomizedRun4 = jsPsych.randomization.repeat(delayList, 1); //shuffled array no repeats
+let delayListRandomizedRun5 = jsPsych.randomization.repeat(delayList, 1); //shuffled array no repeats
+let delayListRandomizedRun6 = jsPsych.randomization.repeat(delayList, 1); //shuffled array no repeats
+let delayListRandomizedRun7 = jsPsych.randomization.repeat(delayList, 1); //shuffled array no repeats
+let delayListRandomizedRun8 = jsPsych.randomization.repeat(delayList, 1); //shuffled array no repeats
+let delayListRandomizedRun9 = jsPsych.randomization.repeat(delayList, 1); //shuffled array no repeats
+let delayListRandomizedRun10 = jsPsych.randomization.repeat(delayList, 1); //shuffled array no repeats
 
 // practice
 

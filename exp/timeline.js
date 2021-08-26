@@ -3,7 +3,7 @@ let timeline = [];
 let instructions0 = {
   type: "html-keyboard-response",
   stimulus: "<p> Welcome to the experiment!</p>"+
-  "<p>It should take about 30 mimnutes.</p>"+
+  "<p>It should take about 30 minutes.</p>"+
   "<p> <i> Press spacebar to continue</i> </p>",
   choices: [32]
 };
@@ -220,6 +220,18 @@ let instructions10 = {
 // };
 
 let neckerCube = {
+  type: "html-keyboard-response",
+  stimulus: function(){
+    var html="<img height='250' width='300' src='"+jsPsych.timelineVariable('stimulus', true)+"'>";
+    return html;
+  },
+  // stimulus: jsPsych.timelineVariable("stimulus"),
+  data: jsPsych.timelineVariable("data"),
+  response_ends_trial: true,
+  choices: [48, 49]
+};
+
+let attentionCheck = {
   type: "html-keyboard-response",
   stimulus: function(){
     var html="<img height='250' width='300' src='"+jsPsych.timelineVariable('stimulus', true)+"'>";
