@@ -209,6 +209,69 @@ let instructions10 = {
 
 // experiment
 
+let break1 = {
+  type: "html-keyboard-response",
+  stimulus: "<p>You completed 10% of the experiment!</p>"+
+  "<p> <i> Press the spacebar to continue</i> </p>",
+  choices: [32]
+};
+
+let break2 = {
+  type: "html-keyboard-response",
+  stimulus: "<p>You completed 20% of the experiment!</p>"+
+  "<p> <i> Press the spacebar to continue</i> </p>",
+  choices: [32]
+};
+
+let break3 = {
+  type: "html-keyboard-response",
+  stimulus: "<p>You completed 30% of the experiment!</p>"+
+  "<p> <i> Press the spacebar to continue</i> </p>",
+  choices: [32]
+};
+
+let break4 = {
+  type: "html-keyboard-response",
+  stimulus: "<p>You completed 40% of the experiment!</p>"+
+  "<p> <i> Press the spacebar to continue</i> </p>",
+  choices: [32]
+};
+
+let break5 = {
+  type: "html-keyboard-response",
+  stimulus: "<p>You completed half the experiment!</p>"+
+  "<p> <i> Press the spacebar to continue</i> </p>",
+  choices: [32]
+};
+
+let break6 = {
+  type: "html-keyboard-response",
+  stimulus: "<p>You completed 60% of the experiment!</p>"+
+  "<p> <i> Press the spacebar to continue</i> </p>",
+  choices: [32]
+};
+
+let break7 = {
+  type: "html-keyboard-response",
+  stimulus: "<p>You completed 70% of the experiment!</p>"+
+  "<p> <i> Press the spacebar to continue</i> </p>",
+  choices: [32]
+};
+
+let break8 = {
+  type: "html-keyboard-response",
+  stimulus: "<p>You completed 90% of the experiment!</p>"+
+  "<p> <i> Press the spacebar to continue</i> </p>",
+  choices: [32]
+};
+
+let break9 = {
+  type: "html-keyboard-response",
+  stimulus: "<p>You completed 90% of the experiment!</p>"+
+  "<p> <i> Press the spacebar to continue</i> </p>",
+  choices: [32]
+};
+
 // let fixation? = {
 //   type: "html-keyboard-response",
 //   stimulus: "<p>Just one last thing: Please focus your gaze on the central cross throughout the experiment!</p>"+
