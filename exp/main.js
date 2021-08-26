@@ -28,9 +28,9 @@ let procedureExperiment= {
 };
 
 timeline.push(instructions0);
-// timeline.push(procedureCalibration);
-// timeline.push(procedureInstructions);
-// timeline.push(procedurePractice);
+timeline.push(procedureCalibration);
+timeline.push(procedureInstructions);
+timeline.push(procedurePractice);
 timeline.push(procedureExperiment);
 
 timeline.push(dataSave);
