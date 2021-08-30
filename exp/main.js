@@ -9,7 +9,7 @@ let procedureCalibration= {
 };
 
 let procedureInstructions= {
-    timeline:[instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10],
+    timeline:[instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10, instructions11],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57],
@@ -30,7 +30,7 @@ let procedureExperimentRun1= {
 let procedureExperimentRun2= {
     timeline:[neckerCube, interStimulusInterval],
     timeline_variables: experimentTrialsRun2,
-    choices: [48, 49],
+    choices: [48, 49]
 };
 
 let procedureExperimentRun3= {
@@ -85,8 +85,8 @@ let procedureExperimentRun10= {
 timeline.push(instructions0);
 // timeline.push(procedureCalibration);
 // timeline.push(procedureInstructions);
-timeline.push(procedurePractice);
-timeline.push(procedureExperimentRun1);
+// timeline.push(procedurePractice);
+// timeline.push(procedureExperimentRun1);
 timeline.push(break1);
 timeline.push(procedureExperimentRun2);
 timeline.push(break2);

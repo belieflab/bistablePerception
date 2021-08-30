@@ -207,14 +207,32 @@ let instructions10 = {
   choices: [32]
 };
 
+let instructions11 = {
+  type: "html-keyboard-response",
+  stimulus: "<p id='initialCountdown'></p>",
+  on_start: initialCountdown(),
+  trial_duration: 11000,
+  response_ends_trial: false
+};
+
 // experiment
 
 let break1 = {
   type: "html-keyboard-response",
-  stimulus: "<p>You completed 10% of the experiment!</p>"+
-  "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32]
+  stimulus:"<p id='countdown'></p>",
+  // stimulus: "<p id='countdown'>You completed 10% of the experiment!</p>",
+  on_start: countdown(),
+  trial_duration: 11000,
+  response_ends_trial: false
 };
+
+// let instr_1 = {
+//   type:"html-keyboard-response",
+//   stimulus:'<p style="color:black; font-size:60px;" id="countdown"></p>',
+//   trial_duration: 5200,
+//   on_start: countdown(),
+//   response_ends_trial: false,
+//   }
 
 let break2 = {
   type: "html-keyboard-response",
