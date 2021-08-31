@@ -1,5 +1,11 @@
 trialIterator = 1;
 
+// global variable for countdown()
+var percentage = ['10%','20%','30%','40%','half','60%','70%','80%','90%'];
+
+// var countdownIndex = ['1','2','3','4','5','6','7','8','9'];
+var countdownIndex = [2];
+
 delayList = [
 100,
 200,

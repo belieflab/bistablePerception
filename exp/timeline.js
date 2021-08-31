@@ -229,73 +229,86 @@ let break1 = {
   type: "html-keyboard-response",
   stimulus:"<p id='countdown1'></p>",
   on_start: countdown(),
+  on_finish: function() {
+    percentage.shift();
+    countdownIndex++;
+    // countdownIndex.pop();
+    // countdownIndex.push(1);
+  },
   trial_duration: 10000,
   response_ends_trial: false
 };
-
-// let instr_1 = {
-//   type:"html-keyboard-response",
-//   stimulus:'<p style="color:black; font-size:60px;" id="countdown"></p>',
-//   trial_duration: 5200,
-//   on_start: countdown(),
-//   response_ends_trial: false,
-//   }
 
 let break2 = {
   type: "html-keyboard-response",
   stimulus:"<p id='countdown2'></p>",
   on_start: countdown(),
+  on_finish: function() {
+    percentage.shift();
+    // countdownIndex++;
+  },
   trial_duration: 10000,
   response_ends_trial: false
 };
 
 let break3 = {
   type: "html-keyboard-response",
-  stimulus: "<p>You completed 30% of the experiment!</p>"+
-  "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32]
+  stimulus:"<p id='countdown3'></p>",
+  on_start: countdown(),
+  on_finish: function() {
+    percentage.shift();
+    // countdownIndex++;
+  },
+  trial_duration: 10000,
+  response_ends_trial: false
 };
 
 let break4 = {
   type: "html-keyboard-response",
-  stimulus: "<p>You completed 40% of the experiment!</p>"+
-  "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32]
+  stimulus:"<p id='countdown4'></p>",
+  on_start: countdown4(),
+  trial_duration: 10000,
+  response_ends_trial: false
 };
 
 let break5 = {
   type: "html-keyboard-response",
-  stimulus: "<p>You completed half the experiment!</p>"+
-  "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32]
+  stimulus:"<p id='countdown5'></p>",
+  on_start: countdown5(),
+  trial_duration: 10000,
+  response_ends_trial: false
 };
 
 let break6 = {
   type: "html-keyboard-response",
-  stimulus: "<p>You completed 60% of the experiment!</p>"+
-  "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32]
+  stimulus:"<p id='countdown6'></p>",
+  on_start: countdown6(),
+  trial_duration: 10000,
+  response_ends_trial: false
 };
 
 let break7 = {
   type: "html-keyboard-response",
-  stimulus: "<p>You completed 70% of the experiment!</p>"+
-  "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32]
+  stimulus:"<p id='countdown7'></p>",
+  on_start: countdown7(),
+  trial_duration: 10000,
+  response_ends_trial: false
 };
 
 let break8 = {
   type: "html-keyboard-response",
-  stimulus: "<p>You completed 90% of the experiment!</p>"+
-  "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32]
+  stimulus:"<p id='countdown8'></p>",
+  on_start: countdown8(),
+  trial_duration: 10000,
+  response_ends_trial: false
 };
 
 let break9 = {
   type: "html-keyboard-response",
-  stimulus: "<p>You completed 90% of the experiment!</p>"+
-  "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32]
+  stimulus:"<p id='countdown9'></p>",
+  on_start: countdown9(),
+  trial_duration: 10000,
+  response_ends_trial: false
 };
 
 // let fixation? = {
