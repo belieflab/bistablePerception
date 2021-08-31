@@ -209,9 +209,17 @@ let instructions10 = {
 
 let instructions11 = {
   type: "html-keyboard-response",
-  stimulus: "<p id='initialCountdown'></p>",
-  on_start: initialCountdown(),
-  trial_duration: 11000,
+  stimulus: "<p id='practiceCountdown'></p>",
+  on_start: practiceCountdown(),
+  trial_duration: 10000,
+  response_ends_trial: false
+};
+
+let initializeExperiment = {
+  type: "html-keyboard-response",
+  stimulus: "<p id='experimentCountdown'></p>",
+  on_start: experimentCountdown(),
+  trial_duration: 10000,
   response_ends_trial: false
 };
 
@@ -222,7 +230,7 @@ let break1 = {
   stimulus:"<p id='countdown'></p>",
   // stimulus: "<p id='countdown'>You completed 10% of the experiment!</p>",
   on_start: countdown(),
-  trial_duration: 11000,
+  trial_duration: 10000,
   response_ends_trial: false
 };
 

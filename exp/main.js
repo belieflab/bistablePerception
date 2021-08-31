@@ -84,9 +84,10 @@ let procedureExperimentRun10= {
 
 timeline.push(instructions0);
 // timeline.push(procedureCalibration);
-// timeline.push(procedureInstructions);
+timeline.push(procedureInstructions);
 // timeline.push(procedurePractice);
-// timeline.push(procedureExperimentRun1);
+timeline.push(initializeExperiment);
+timeline.push(procedureExperimentRun1);
 timeline.push(break1);
 timeline.push(procedureExperimentRun2);
 timeline.push(break2);

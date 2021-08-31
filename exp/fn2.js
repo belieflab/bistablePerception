@@ -1,14 +1,26 @@
-// Initial countdown
-function initialCountdown(){ // initialize timer
+// Practice countdown
+function practiceCountdown(){ // initialize timer
     var sec = 10; // set timer in seconds
     var timer = setInterval(function(){
-    document.getElementById('initialCountdown').innerHTML= 'The practice is about to start !' + '<br>'+sec;
+    document.getElementById('practiceCountdown').innerHTML= 'The practice is about to start !' + '<br>'+sec;
     sec--;
     if (sec==-1){
       jsPsych.finishTrial();
       }
     }, 1000);
   }
+
+// Experiment countdown
+function experimentCountdown(){ // initialize timer
+  var sec = 10; // set timer in seconds
+  var timer = setInterval(function(){
+  document.getElementById('experimentCountdown').innerHTML= 'The experiment is about to start !' + '<br>'+sec;
+  sec--;
+  if (sec==-1){
+    jsPsych.finishTrial();
+    }
+  }, 1000);
+}
 
 // Countdown
 function countdown(){ // initialize timer
