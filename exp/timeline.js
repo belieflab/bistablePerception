@@ -227,8 +227,7 @@ let initializeExperiment = {
 
 let break1 = {
   type: "html-keyboard-response",
-  stimulus:"<p id='countdown'></p>",
-  // stimulus: "<p id='countdown'>You completed 10% of the experiment!</p>",
+  stimulus:"<p id='countdown1'></p>",
   on_start: countdown(),
   trial_duration: 10000,
   response_ends_trial: false
@@ -244,9 +243,10 @@ let break1 = {
 
 let break2 = {
   type: "html-keyboard-response",
-  stimulus: "<p>You completed 20% of the experiment!</p>"+
-  "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32]
+  stimulus:"<p id='countdown2'></p>",
+  on_start: countdown(),
+  trial_duration: 10000,
+  response_ends_trial: false
 };
 
 let break3 = {
