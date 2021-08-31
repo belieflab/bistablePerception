@@ -225,16 +225,21 @@ let initializeExperiment = {
 
 // experiment
 
+// let breakTime = {
+//   type: "html-keyboard-response",
+//   stimulus:"<p id='countdown'></p>",
+//   on_start: countdown(),
+//   on_finish: function() {
+//     percentage.shift();
+//   },
+//   trial_duration: 10000,
+//   response_ends_trial: false
+// };
+
 let break1 = {
   type: "html-keyboard-response",
   stimulus:"<p id='countdown1'></p>",
-  on_start: countdown(),
-  on_finish: function() {
-    percentage.shift();
-    countdownIndex++;
-    // countdownIndex.pop();
-    // countdownIndex.push(1);
-  },
+  on_start: countdown1(),
   trial_duration: 10000,
   response_ends_trial: false
 };
@@ -242,11 +247,7 @@ let break1 = {
 let break2 = {
   type: "html-keyboard-response",
   stimulus:"<p id='countdown2'></p>",
-  on_start: countdown(),
-  on_finish: function() {
-    percentage.shift();
-    // countdownIndex++;
-  },
+  on_start: countdown2(),
   trial_duration: 10000,
   response_ends_trial: false
 };
@@ -254,11 +255,7 @@ let break2 = {
 let break3 = {
   type: "html-keyboard-response",
   stimulus:"<p id='countdown3'></p>",
-  on_start: countdown(),
-  on_finish: function() {
-    percentage.shift();
-    // countdownIndex++;
-  },
+  on_start: countdown3(),
   trial_duration: 10000,
   response_ends_trial: false
 };

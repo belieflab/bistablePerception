@@ -26,10 +26,11 @@ function experimentCountdown(){ // initialize timer
 function countdown(){ // initialize timer
     var sec = 10;
     var timer = setInterval(function(){
-    var countdownHTML = document.getElementById("countdown2");
+    var countdownHTML = document.getElementById("countdown");
     countdownHTML.innerHTML= 'You completed '+percentage[0]+' of the experiment!' + '<br>'+sec;
     sec--;
     if (sec==-1){
+      sec = 10;
       jsPsych.finishTrial();
       }
     }, 1000);
@@ -42,7 +43,7 @@ function countdown1(){ // initialize timer
   var percentage = '10%';
   var timer = setInterval(function(){
   var i = 1;
-  document.getElementById('countdown').innerHTML= 'You completed '+percentage+' of the experiment!' + '<br>'+sec;
+  document.getElementById('countdown1').innerHTML= 'You completed '+percentage+' of the experiment!' + '<br>'+sec;
   sec--;
   if (sec==-1){
     jsPsych.finishTrial();
@@ -55,7 +56,7 @@ function countdown2(){ // initialize timer
   var percentage = '20%';
   var timer = setInterval(function(){
   var i = 1;
-  document.getElementById('countdown').innerHTML= 'You completed '+percentage+' of the experiment!' + '<br>'+sec;
+  document.getElementById('countdown2').innerHTML= 'You completed '+percentage+' of the experiment!' + '<br>'+sec;
   sec--;
   if (sec==-1){
     jsPsych.finishTrial();
@@ -68,7 +69,7 @@ function countdown3(){ // initialize timer
   var percentage = '30%';
   var timer = setInterval(function(){
   var i = 1;
-  document.getElementById('countdown').innerHTML= 'You completed '+percentage+' of the experiment!' + '<br>'+sec;
+  document.getElementById('countdown3').innerHTML= 'You completed '+percentage+' of the experiment!' + '<br>'+sec;
   sec--;
   if (sec==-1){
     jsPsych.finishTrial();
