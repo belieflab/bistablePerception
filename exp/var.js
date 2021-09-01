@@ -114,6 +114,8 @@ let correctPracticeCounter = 0;
 
 let dummyTrialsCounter = 0;
 
+let practiceIterator = 0;
+
 // experiment
 
 let experimentStimuli = [];

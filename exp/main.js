@@ -17,7 +17,7 @@ let procedureInstructions= {
 
 let procedureDummyTrials= {
     timeline:[neckerCube, interStimulusInterval],
-    timeline_variables: practiceTrials.slice(0,5),
+    timeline_variables: practiceTrials.slice(0,5), // 5 trials only
     choices: [48, 49],
 };
 
@@ -29,8 +29,12 @@ let if_node= {
             return true;
         } else if (correctPracticeCounter < 3) {
             return false;
-        } else if (dummyTrialsCounter == 5) {
-            return false;
+        } 
+    },
+    on_start: function(){
+        if (dummyTrialsCounter == 5) {
+            // prevents start if all processes are killed
+            jsPsych.finishTrial();
         }
     }
 };
@@ -39,6 +43,18 @@ let procedurePractice= {
     timeline:[neckerCubePractice, neckerCubePracticeCheckout, if_node],
     timeline_variables: practiceTrials,
     choices: [48, 49, 78, 89],
+    // kills all processes until last trial
+    on_finish: function() {
+        if (dummyTrialsCounter == 5) {
+          i = 0;
+          while (i < practiceTrials.length){ // loops through to the end of all possible trials
+            jsPsych.endCurrentTimeline();
+            console.log('killProcess');
+            practiceIterator++;
+            i++;
+          } 
+        }
+      }
 };
 
 let procedureExperimentRun1= {

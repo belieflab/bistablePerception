@@ -330,8 +330,8 @@ let neckerCube = {
   choices: [48, 49],
   on_finish: function(){
     if (dummyTrialsCounter < 5){
-    dummyTrialsCounter++;
-    console.log[dummyTrialsCounter];
+      dummyTrialsCounter++;
+      console.log(dummyTrialsCounter);
     }
   }
 };
@@ -346,7 +346,10 @@ let neckerCubePractice = {
     "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+
     "<img height='125' width='150' src='"+jsPsych.timelineVariable('stimulusRight', true)+"'>";
     return html;
-  }, 
+  },
+  on_start: function() {
+    practiceIterator++;
+  },
   // stimulus: jsPsych.timelineVariable("stimulus"),
   data: jsPsych.timelineVariable("data"),
   response_ends_trial: true,
@@ -405,7 +408,18 @@ let interStimulusInterval = {
   },
   response_ends_trial: false,
   trial_duration: jsPsych.timelineVariable("delay"),
-  choices: [48, 49]
+  choices: [48, 49],
+
+  // on_finish: function() {
+  //   if (dummyTrialsCounter == 5) {
+  //     i = 5;
+  //     while (i < practiceTrials.length){ // loops through to the end of all possible trials
+  //       jsPsych.endCurrentTimeline();
+  //       console.log('killProcess');
+  //       i++;
+  //     } 
+  //   }
+  // }
 };
 
 // let neckerCubeRight = {
