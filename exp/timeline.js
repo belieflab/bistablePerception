@@ -327,13 +327,20 @@ let neckerCube = {
   // stimulus: jsPsych.timelineVariable("stimulus"),
   data: jsPsych.timelineVariable("data"),
   response_ends_trial: true,
-  choices: [48, 49]
+  choices: [48, 49],
+  on_finish: function(){
+    if (dummyTrialsCounter < 5){
+    dummyTrialsCounter++;
+    console.log[dummyTrialsCounter];
+    }
+  }
 };
 
 let neckerCubePractice = {
   type: "html-keyboard-response",
   stimulus: function(){
-    var html="<img height='125' width='150' src='"+jsPsych.timelineVariable('stimulusLeft', true)+"'>" +
+    var html="<p>How do you perceive the cube right now ?</p>"+
+    "<img height='125' width='150' src='"+jsPsych.timelineVariable('stimulusLeft', true)+"'>" +
     "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+
     "<img height='250' width='300' src='"+jsPsych.timelineVariable('stimulus', true)+"'>" +
     "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+
@@ -345,6 +352,37 @@ let neckerCubePractice = {
   response_ends_trial: true,
   choices: [48, 49],
   prompt: "<p>1 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 0</p>"
+};
+
+let neckerCubePracticeCheckout = {
+  type: "html-keyboard-response",
+  stimulus: function(data){
+    var data = jsPsych.data.get().last(1).values()[0];
+    if (jsPsych.pluginAPI.convertKeyCodeToKeyCharacter(data.key_press) === '1') {
+      var html= "<p>Did you mean you perceived the cube like that ?</p>"+
+      "<img height='250' width='300' src='stim/neckercube_left.png'>";
+      return html;
+    } else if (jsPsych.pluginAPI.convertKeyCodeToKeyCharacter(data.key_press) === '0') {
+      var html= "<p>Did you mean you perceived the cube like that ?</p>"+ 
+      "<img height='250' width='300' src='stim/neckercube_right.png'>";
+      return html;
+    }
+  }, 
+  // stimulus: jsPsych.timelineVariable("stimulus"),
+  data: jsPsych.timelineVariable("data"),
+  response_ends_trial: true,
+  choices: [78, 89],
+  prompt: "<p>Press 'Y' for Yes, 'N' for No</p>",
+  on_finish: function(data){
+    var data = jsPsych.data.get().last(1).values()[0];
+    if (jsPsych.pluginAPI.convertKeyCodeToKeyCharacter(data.key_press) === 'y') {
+      correctPracticeCounter++;
+      console.log(correctPracticeCounter);
+    } else if (jsPsych.pluginAPI.convertKeyCodeToKeyCharacter(data.key_press) === 'n') {
+      correctPracticeCounter = 0;
+      console.log(correctPracticeCounter);
+    }
+  }
 };
 
 let attentionCheck = {

@@ -15,23 +15,31 @@ let procedureInstructions= {
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57],
 };
 
-let procedurePractice= {
-    timeline:[neckerCubePractice],
-    timeline_variables: practiceTrials,
+let procedureDummyTrials= {
+    timeline:[neckerCube, interStimulusInterval],
+    timeline_variables: practiceTrials.slice(0,5),
     choices: [48, 49],
 };
 
 let if_node= {
-    timeline:[],
+    timeline: [procedureDummyTrials],
     conditional_function: function practiceCounter(){
-        // if correct answers = 3 in a row -> proceed to dummy trials, elseif continue practice
+        // if correct answers = 3 in a row -> proceed to dummy trials then quit practice after 5 dummy trials, elseif continue practice
         if (correctPracticeCounter == 3) {
-            return TRUE;
+            return true;
         } else if (correctPracticeCounter < 3) {
-            return FALSE;
+            return false;
+        } else if (dummyTrialsCounter == 5) {
+            return false;
         }
     }
-}
+};
+
+let procedurePractice= {
+    timeline:[neckerCubePractice, neckerCubePracticeCheckout, if_node],
+    timeline_variables: practiceTrials,
+    choices: [48, 49, 78, 89],
+};
 
 let procedureExperimentRun1= {
     timeline:[neckerCube, interStimulusInterval],

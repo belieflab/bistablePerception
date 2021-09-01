@@ -107,10 +107,12 @@ for (let i=0; i<100; i++) {
 let practiceTrials = [];
 
 for (let i=0; i<100; i++) {
-  practiceTrials.push({stimulus: practiceStimuli[i], stimulusLeft: practiceStimuliLeft[i],  stimulusRight: practiceStimuliRight[i], data: {test_part:"practice", stim:practiceStimuli[i].slice(100)}}); //creating csv file "baseline_ratings" with liking ratings data saved
+  practiceTrials.push({stimulus: practiceStimuli[i], stimulusLeft: practiceStimuliLeft[i],  stimulusRight: practiceStimuliRight[i], delay: 600, data: {test_part:"practice", stim:practiceStimuli[i].slice(100)}}); //creating csv file "baseline_ratings" with liking ratings data saved
 }
 
 let correctPracticeCounter = 0;
+
+let dummyTrialsCounter = 0;
 
 // experiment
 
