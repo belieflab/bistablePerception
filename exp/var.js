@@ -110,11 +110,13 @@ for (let i=0; i<100; i++) {
   practiceTrials.push({stimulus: practiceStimuli[i], stimulusLeft: practiceStimuliLeft[i],  stimulusRight: practiceStimuliRight[i], delay: 600, data: {test_part:"practice", stim:practiceStimuli[i].slice(100)}}); //creating csv file "baseline_ratings" with liking ratings data saved
 }
 
+// practice counters to keep track of stuff
 let correctPracticeCounter = 0;
-
 let dummyTrialsCounter = 0;
 
+// trial column counters
 let practiceIterator = 0;
+let experimentIterator = 0;
 
 // experiment
 

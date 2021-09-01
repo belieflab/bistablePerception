@@ -333,7 +333,12 @@ let neckerCube = {
       dummyTrialsCounter++;
       console.log(dummyTrialsCounter);
     }
-  }
+  },
+  on_start: function(data) {
+    // keeps track of experiment trial count
+    experimentIterator++;
+    data.index = experimentIterator;
+  },
 };
 
 let neckerCubePractice = {
@@ -347,8 +352,10 @@ let neckerCubePractice = {
     "<img height='125' width='150' src='"+jsPsych.timelineVariable('stimulusRight', true)+"'>";
     return html;
   },
-  on_start: function() {
+  on_start: function(data) {
+    // keeps track of practice trial count
     practiceIterator++;
+    data.index = practiceIterator;
   },
   // stimulus: jsPsych.timelineVariable("stimulus"),
   data: jsPsych.timelineVariable("data"),

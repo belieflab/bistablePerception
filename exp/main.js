@@ -33,7 +33,7 @@ let if_node= {
     },
     on_start: function(){
         if (dummyTrialsCounter == 5) {
-            // prevents start if all processes are killed
+            // prevents last trial if all processes are killed
             jsPsych.finishTrial();
         }
     }
@@ -50,7 +50,6 @@ let procedurePractice= {
           while (i < practiceTrials.length){ // loops through to the end of all possible trials
             jsPsych.endCurrentTimeline();
             console.log('killProcess');
-            practiceIterator++;
             i++;
           } 
         }
