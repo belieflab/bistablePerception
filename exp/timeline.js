@@ -330,6 +330,23 @@ let neckerCube = {
   choices: [48, 49]
 };
 
+let neckerCubePractice = {
+  type: "html-keyboard-response",
+  stimulus: function(){
+    var html="<img height='125' width='150' src='"+jsPsych.timelineVariable('stimulusLeft', true)+"'>" +
+    "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+
+    "<img height='250' width='300' src='"+jsPsych.timelineVariable('stimulus', true)+"'>" +
+    "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+
+    "<img height='125' width='150' src='"+jsPsych.timelineVariable('stimulusRight', true)+"'>";
+    return html;
+  }, 
+  // stimulus: jsPsych.timelineVariable("stimulus"),
+  data: jsPsych.timelineVariable("data"),
+  response_ends_trial: true,
+  choices: [48, 49],
+  prompt: "<p>1 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 0</p>"
+};
+
 let attentionCheck = {
   type: "html-keyboard-response",
   stimulus: function(){

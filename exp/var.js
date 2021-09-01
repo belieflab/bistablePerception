@@ -86,19 +86,31 @@ let delayListRandomizedRun10 = jsPsych.randomization.repeat(delayList, 1); //shu
 // practice
 
 let practiceStimuli = [];
-for (let i=0; i<3; i++) {
+for (let i=0; i<100; i++) {
   practiceStimuli.push('stim/neckercube.png');
-  practiceStimuli.push('stim/neckercube_left.png');
-  practiceStimuli.push('stim/neckercube_right.png');
+  // practiceStimuli.push('stim/neckercube_left.png');
+  // practiceStimuli.push('stim/neckercube_right.png');
 }
 
-let practiceStimuliRandomized = jsPsych.randomization.repeat(practiceStimuli, 1); //shuffled array no repeats
+let practiceStimuliRight = []; // Display help during practice
+for (let i=0; i<100; i++) {
+  practiceStimuliRight.push('stim/neckercube_right.png');
+}
+
+let practiceStimuliLeft = []; // Display help during practice
+for (let i=0; i<100; i++) {
+  practiceStimuliLeft.push('stim/neckercube_left.png');
+}
+
+// let practiceStimuliRandomized = jsPsych.randomization.repeat(practiceStimuli, 1); //shuffled array no repeats
 
 let practiceTrials = [];
 
-for (let i=0; i<9; i++) {
-  practiceTrials.push({stimulus: practiceStimuliRandomized[i], data: {test_part:"practice", stim:practiceStimuliRandomized[i].slice(5)}}); //creating csv file "baseline_ratings" with liking ratings data saved
+for (let i=0; i<100; i++) {
+  practiceTrials.push({stimulus: practiceStimuli[i], stimulusLeft: practiceStimuliLeft[i],  stimulusRight: practiceStimuliRight[i], data: {test_part:"practice", stim:practiceStimuli[i].slice(100)}}); //creating csv file "baseline_ratings" with liking ratings data saved
 }
+
+let correctPracticeCounter = 0;
 
 // experiment
 

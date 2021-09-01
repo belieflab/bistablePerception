@@ -16,10 +16,22 @@ let procedureInstructions= {
 };
 
 let procedurePractice= {
-    timeline:[neckerCube],
+    timeline:[neckerCubePractice],
     timeline_variables: practiceTrials,
     choices: [48, 49],
 };
+
+let if_node= {
+    timeline:[],
+    conditional_function: function practiceCounter(){
+        // if correct answers = 3 in a row -> proceed to dummy trials, elseif continue practice
+        if (correctPracticeCounter == 3) {
+            return TRUE;
+        } else if (correctPracticeCounter < 3) {
+            return FALSE;
+        }
+    }
+}
 
 let procedureExperimentRun1= {
     timeline:[neckerCube, interStimulusInterval],
@@ -85,26 +97,26 @@ let procedureExperimentRun10= {
 timeline.push(instructions0);
 // timeline.push(procedureCalibration);
 // timeline.push(procedureInstructions);
-// timeline.push(procedurePractice);
+timeline.push(procedurePractice);
 // timeline.push(initializeExperiment);
 // timeline.push(procedureExperimentRun1);
-timeline.push(break1);
+// timeline.push(break1);
 // timeline.push(procedureExperimentRun2);
-timeline.push(break2);
+// timeline.push(break2);
 // timeline.push(procedureExperimentRun3);
-timeline.push(break3);
+// timeline.push(break3);
 // timeline.push(procedureExperimentRun4);
-timeline.push(break4);
+// timeline.push(break4);
 // timeline.push(procedureExperimentRun5);
-timeline.push(break5);
+// timeline.push(break5);
 // timeline.push(procedureExperimentRun6);
-timeline.push(break6);
+// timeline.push(break6);
 // timeline.push(procedureExperimentRun7);
-timeline.push(break7);
+// timeline.push(break7);
 // timeline.push(procedureExperimentRun8);
-timeline.push(break8);
+// timeline.push(break8);
 // timeline.push(procedureExperimentRun9);
-timeline.push(break9);
+// timeline.push(break9);
 // timeline.push(procedureExperimentRun10);
 
 timeline.push(dataSave);
