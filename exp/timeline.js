@@ -2,7 +2,7 @@ let timeline = [];
 
 let instructions0 = {
   type: "html-keyboard-response",
-  stimulus: "<p> Welcome to the experiment!</p>"+
+  stimulus: "<p> Hello and thank you for taking part in our experiment!</p>"+
   "<p>It should take about 30 minutes.</p>"+
   "<p> <i> Press spacebar to continue</i> </p>",
   choices: [32]
@@ -39,10 +39,9 @@ let calibration2 = {
 let calibration3 = {
   type: "html-keyboard-response",
   stimulus: "<p>First, we need your help to properly adjust the distance betwen you and your screen.</p>"+
-  "<video autoplay='autoplay'>"+
+  "<video autoplay='autoplay' loop>"+
   "<source src='stim/distance.mp4' type='video/mp4'>"+
   "</video>"+
-
   "<p> <i> Press spacebar to continue</i> </p>",
   choices: [32]
 };
@@ -58,7 +57,7 @@ let calibration4 = {
 let calibration5 = {
   type: "html-keyboard-response",
   stimulus: "<p>Next, we need your help to properly adjust the angle of your screen:</p>"+
-  "<video autoplay='autoplay'>"+
+  "<video autoplay='autoplay' loop>"+
   "<source src='stim/angle.mp4' type='video/mp4'>"+
   "</video>"+
   "<p> <i> Press spacebar to continue</i> </p>",
@@ -76,7 +75,7 @@ let calibration6 = {
 let calibration7 = {
   type: "html-keyboard-response",
   stimulus: "<p>Last, we need your help to adjust the height of your screen.</p>"+
-  "<video autoplay='autoplay'>"+
+  "<video autoplay='autoplay' loop>"+
   "<source src='stim/screenheight.mp4' type='video/mp4'>"+
   "</video>"+  "<p> <i> Press spacebar to continue</i> </p>",
   choices: [32]
@@ -135,40 +134,75 @@ let instructions4 = {
   type: "html-keyboard-response",
   stimulus:   "<br><br><br>"+
   "<p>You can interpret it as a cube seen from above...</p>"+
-  "<video width='320' height='240'a utoplay='autoplay'>"+
+  "<video width='320' height='240' autoplay='autoplay' loop>"+
   "<source src='stim/all.mp4' type='video/mp4'>"+
   "</video>"+
   "<p>...or as a cube seen from below:</p>"+
   "<br>"+
-  "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32]
+  "<p id='instructionDelay'> <i>&nbsp</i> </p>",
+  choices: [32],
+  trial_duration: 20000,
+  response_ends_trial: true,
+  // on_start: instructionDelay()
+  on_start: function(data){
+    var sec = 4; // set timer in seconds
+    var timer = setInterval(function(){
+    sec--;
+    if (sec==-1){
+      document.getElementById('instructionDelay').innerHTML= '<i>Press the spacebar to continue</i>';
+      }
+    }, 1000);
+  }
 };
-
 
 let instructions5 = {
   type: "html-keyboard-response",
   stimulus: "<p>The cube will appear and disappear very quickly:</p>"+
-  "<video width='320' height='240' autoplay='autoplay'>"+
+  "<video width='320' height='240' autoplay='autoplay' loop>"+
   "<source src='stim/intermittent.mp4' type='video/mp4'>"+
   "</video>"+
-  "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32]
+  "<p id='instructionDelay'> <i>&nbsp</i> </p>",
+  choices: [32],
+  trial_duration: 20000,
+  response_ends_trial: true,
+  // on_start: instructionDelay()
+  on_start: function(){
+    var sec = 3; // set timer in seconds
+    var timer = setInterval(function(){
+    sec--;
+    if (sec==-1){
+      document.getElementById('instructionDelay').innerHTML= '<i>Press the spacebar to continue</i>';
+      }
+    }, 1000);
+  }
 };
 
 let instructions6 = {
   type: "html-keyboard-response",
   stimulus: "<p>For each appearance of the cube, we will ask you to indicate how you perceive it, at the moment:</p>"+
-  "<video width='320' height='240' autoplay='autoplay'>"+
+  "<video width='320' height='240' autoplay='autoplay' loop>"+
   "<source src='stim/all.mp4' type='video/mp4'>"+
   "</video>"+
-  "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32]
+  "<p id='instructionDelay'> <i>&nbsp</i> </p>",
+  choices: [32],
+  trial_duration: 20000,
+  response_ends_trial: true,
+  // on_start: instructionDelay()
+  on_start: function(){
+    var sec = 4; // set timer in seconds
+    var timer = setInterval(function(){
+    sec--;
+    if (sec==-1){
+      document.getElementById('instructionDelay').innerHTML= '<i>Press the spacebar to continue</i>';
+      }
+    }, 1000);
+  }
 };
 
 let instructions7 = {
   type: "html-keyboard-response",
   stimulus: "<p>You will need to answer as fast as possible:</p>"+
-  "<video width='320' height='240' autoplay='autoplay'>"+
+  "<video width='320' height='240' autoplay='autoplay' loop>"+
   "<source src='stim/all.mp4' type='video/mp4'>"+
   "</video>"+
   "<p> <i> Press the spacebar to continue</i> </p>",
@@ -179,22 +213,46 @@ let instructions8 = {
   type: "html-keyboard-response",
   stimulus: "<p>Press the 0 key when you perceive the cube from above:</p>"+
   "<p>(When the front side of the cube appears on the right)</p>"+
-  "<video width='320' height='240' autoplay='autoplay'>"+
+  "<video width='320' height='240' autoplay='autoplay' loop>"+
   "<source src='stim/sfa.mp4' type='video/mp4'>"+
   "</video>"+
-  "<p> <i> Press the 0 key to continue</i> </p>",
-  choices: [48]
+  "<p id='instructionDelay'> <i>&nbsp</i> </p>",
+  choices: [48],
+  trial_duration: 20000,
+  response_ends_trial: true,
+  // on_start: instructionDelay()
+  on_start: function(){
+    var sec = 4; // set timer in seconds
+    var timer = setInterval(function(){
+    sec--;
+    if (sec==-1){
+      document.getElementById('instructionDelay').innerHTML= '<i>Press the 0 key to continue</i>';
+      }
+    }, 1000);
+  }
 };
 
 let instructions9 = {
   type: "html-keyboard-response",
   stimulus: "<p>Press the 1 key when you perceive the cube from below:</p>"+
   "<p>(When the front side of the cube appears on the left)</p>"+
-  "<video width='320' height='240' autoplay='autoplay'>"+
+  "<video width='320' height='240' autoplay='autoplay' loop>"+
   "<source src='stim/sfb.mp4' type='video/mp4'>"+
   "</video>"+
-  "<p> <i> Press the 1 key to continue</i> </p>",
-  choices: [49]
+  "<p id='instructionDelay'> <i>&nbsp</i> </p>",
+  choices: [49],
+  trial_duration: 20000,
+  response_ends_trial: true,
+  // on_start: instructionDelay()
+  on_start: function(){
+    var sec = 4; // set timer in seconds
+    var timer = setInterval(function(){
+    sec--;
+    if (sec==-1){
+      document.getElementById('instructionDelay').innerHTML= '<i>Press the 1 key to continue</i>';
+      }
+    }, 1000);
+  }
 };
 
 let instructions10 = {
@@ -395,6 +453,13 @@ let neckerCubePracticeCheckout = {
   }
 };
 
+let dummyTrialsInstructions = {
+  type: "html-keyboard-response",
+  stimulus: "<p> Great job ! We are now going to run some practice trials !</p>"+
+  "<p> <i> Press spacebar to continue</i> </p>",
+  choices: [32]
+};
+
 let attentionCheck = {
   type: "html-keyboard-response",
   stimulus: function(){
@@ -410,7 +475,7 @@ let attentionCheck = {
 let interStimulusInterval = {
   type: "html-keyboard-response",
   stimulus: function(){
-    var html="";
+    var html="<p>+</p>";
     return html;
   },
   response_ends_trial: false,

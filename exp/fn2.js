@@ -14,13 +14,25 @@ function practiceCountdown(){ // initialize timer
 function experimentCountdown(){ // initialize timer
   var sec = 10; // set timer in seconds
   var timer = setInterval(function(){
-  document.getElementById('experimentCountdown').innerHTML= 'The experiment is about to start !' + '<br>'+sec;
+  document.getElementById('experimentCountdown').innerHTML= 'Good job ! The experiment is about to start !' + '<br>'+sec;
   sec--;
   if (sec==-1){
     jsPsych.finishTrial();
     }
   }, 1000);
 }
+
+// // Instruction delays
+// function instructionDelay(){ // initialize timer
+//   var sec = 3; // set timer in seconds
+//   var timer = setInterval(function(){
+//   sec--;
+//   if (sec==-1){
+//     document.getElementById('instructionDelay').innerHTML= 'Press the spacebar to continue';
+//     }
+//   }, 1000);
+// }
+
 
 // // Countdown
 // function countdown(){ // initialize timer

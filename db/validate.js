@@ -44,6 +44,13 @@ function validateBrightness() {
     }
 }
 
+function validateFullscreen() {
+    if (document.getElementById("fullscreen").checked === false) {
+        alert("Please confirm your browser window is in full screen");
+    }
+}
+
+
 // function validateHeadphones() {
 //     if (document.getElementById("headphones").checked === false) {
 //         alert("Please confirm your headphones are plugged in.");
@@ -147,7 +154,7 @@ function submitIntake() {
         antihandedness = "right";
     }
 
-    if (document.getElementById("brightness").checked === false /*|| document.getElementById("headphones").checked === false || document.getElementById("volume").checked === false*/) {
+    if (document.getElementById("brightness").checked === false || document.getElementById("fullscreen").checked === false /*|| document.getElementById("headphones").checked === false || document.getElementById("volume").checked === false*/) {
         // do nothing
     } else {
         // alert("your subjectid is " + subjectID);
@@ -155,5 +162,6 @@ function submitIntake() {
         validateIntake();
     }
 }
+
 
 

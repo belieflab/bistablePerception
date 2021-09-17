@@ -22,7 +22,7 @@ let procedureDummyTrials= {
 };
 
 let if_node= {
-    timeline: [procedureDummyTrials],
+    timeline: [dummyTrialsInstructions, procedureDummyTrials],
     conditional_function: function practiceCounter(){
         // if correct answers = 3 in a row -> proceed to dummy trials then quit practice after 5 dummy trials, elseif continue practice
         if (correctPracticeCounter == 3) {
@@ -119,10 +119,10 @@ let procedureExperimentRun10= {
 
 timeline.push(instructions0);
 // timeline.push(procedureCalibration);
-// timeline.push(procedureInstructions);
+timeline.push(procedureInstructions);
 timeline.push(procedurePractice);
-// timeline.push(initializeExperiment);
-// timeline.push(procedureExperimentRun1);
+timeline.push(initializeExperiment);
+timeline.push(procedureExperimentRun1);
 // timeline.push(break1);
 // timeline.push(procedureExperimentRun2);
 // timeline.push(break2);
