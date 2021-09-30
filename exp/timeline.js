@@ -255,12 +255,18 @@ let instructions9 = {
   }
 };
 
-let instructions10 = {
+let instructions10a = {
   type: "html-keyboard-response",
   stimulus: "<p>Just one last thing: Please focus your gaze on the central cross throughout the experiment!</p>"+
-  "<video width='320' height='240' autoplay='autoplay'>"+
-  "<source src='stim/nc.mp4' type='video/mp4'>"+
-  "</video>"+
+  "<img height='250' width='300' src='stim/nc_fixation.png'>"+
+  "<p> <i> Press the spacebar to continue</i> </p>",
+  choices: [32]
+};
+
+let instructions10b = {
+  type: "html-keyboard-response",
+  stimulus: "<p>Just one last thing: Please focus your gaze on the center of the cube throughout the experiment!</p>"+
+  "<img height='250' width='300' src='stim/nc.png'>"+
   "<p> <i> Press the spacebar to continue</i> </p>",
   choices: [32]
 };
@@ -475,7 +481,7 @@ let attentionCheck = {
 let interStimulusInterval = {
   type: "html-keyboard-response",
   stimulus: function(){
-    var html="<p>+</p>";
+    var html="<p style='font-size:24px'>+</p>";
     return html;
   },
   response_ends_trial: false,

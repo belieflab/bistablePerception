@@ -8,12 +8,30 @@ let procedureCalibration= {
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57],
 };
 
-let procedureInstructions= {
-    timeline:[instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10, instructions11],
-    // defines which array to draw stimuli from 
-    // timeline_variables: imageArrayForPrelikingRating,
-    choices: [49, 50, 51, 52, 53, 54, 55, 56, 57],
-};
+// let procedureInstructions;
+// switch (version) {
+//     case "continuous fixation":
+    let procedureInstructionsFixation = {
+        timeline:[instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a, instructions11],
+        // defines which array to draw stimuli from 
+        // timeline_variables: imageArrayForPrelikingRating,
+        choices: [49, 50, 51, 52, 53, 54, 55, 56, 57],
+    };
+
+    let procedureInstructions = {
+        timeline:[instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10b, instructions11],
+        // defines which array to draw stimuli from 
+        // timeline_variables: imageArrayForPrelikingRating,
+        choices: [49, 50, 51, 52, 53, 54, 55, 56, 57],
+    };
+//     case "discontinuous fixation":
+//     procedureInstructions = {
+//         timeline:[instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions11],
+//         // defines which array to draw stimuli from 
+//         // timeline_variables: imageArrayForPrelikingRating,
+//         choices: [49, 50, 51, 52, 53, 54, 55, 56, 57],
+//     };
+// }
 
 let procedureDummyTrials= {
     timeline:[neckerCube, interStimulusInterval],
@@ -119,7 +137,15 @@ let procedureExperimentRun10= {
 
 timeline.push(instructions0);
 // timeline.push(procedureCalibration);
-timeline.push(procedureInstructions);
+
+switch (version) {
+    case "continuous fixation":
+        timeline.push(procedureInstructionsFixation);
+        break;
+    case "discontinuous fixation":
+        timeline.push(procedureInstructions);
+        break;
+}
 timeline.push(procedurePractice);
 timeline.push(initializeExperiment);
 timeline.push(procedureExperimentRun1);
