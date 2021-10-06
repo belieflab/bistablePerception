@@ -9,10 +9,26 @@ let procedureCalibration= {
 };
 
 let procedureInstructions= {
-    timeline:[instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10, instructions11],
+    timeline:[instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10, repeatInstructions],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57],
+};
+
+let if_node_instructions= {
+    timeline: [procedureInstructions],
+    conditional_function: function(){
+        // get the data from the previous trial,
+        // and check which key was pressed
+        // var data = jsPsych.data.get().last(1).values()[0];
+        var data = jsPsych.data.key_press;
+        console.log(data);
+        if(data == 49){
+            return true;
+        } else {
+            return false;
+        }
+    }
 };
 
 let procedureDummyTrials= {
@@ -120,6 +136,8 @@ let procedureExperimentRun10= {
 timeline.push(instructions0);
 // timeline.push(procedureCalibration);
 timeline.push(procedureInstructions);
+timeline.push(if_node_instructions);
+timeline.push(beginPractice);
 timeline.push(procedurePractice);
 timeline.push(initializeExperiment);
 timeline.push(procedureExperimentRun1);

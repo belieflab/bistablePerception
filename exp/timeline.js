@@ -265,7 +265,14 @@ let instructions10 = {
   choices: [32]
 };
 
-let instructions11 = {
+let repeatInstructions = {
+  type: "html-keyboard-response",
+  stimulus: "<p>Press the 1 key if you want to display instructions again!</p>"+
+  "<p> <i> Press the 0 key to continue</i> </p>",
+  choices: [48, 49]
+}
+
+let beginPractice = {
   type: "html-keyboard-response",
   stimulus: "<p id='practiceCountdown'></p>",
   on_start: practiceCountdown(),
