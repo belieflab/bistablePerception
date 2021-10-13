@@ -55,7 +55,7 @@ let procedureInstructions= {
 
 
 let cond_node = {
-    timeline: [procedureInstructions],
+    timeline: [repeatInstructions],
     conditional_function: function(){
             //     get the data from the previous trial,
             // and check which key was pressed
@@ -72,30 +72,20 @@ let cond_node = {
 
 
 let repeatProcedureInstructions= {
-    timeline:[instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10, repeatInstructions],
+    timeline:[cond_node, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
     choices: [48, 49, 110, 112]
 };
 
 let loop_node = {
-    timeline: [repeatInstructions],
+    timeline: [repeatProcedureInstructions],
     loop_function: function(data){
         if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press) {
         return true;
         } else if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n') == data.values()[0].key_press){
         return false;
         }
-                // get the data from the previous trial,
-            // and check which key was pressed
-            // var data = jsPsych.data.get().last(1).values()[0];
-            // if (jsPsych.pluginAPI.compareKeys(data.response, 'n')) {
-            //     console.log(data);
-            //     return false;
-            // } else if (jsPsych.pluginAPI.compareKeys(data.response, 'y')) {
-            //     console.log(data);
-            //     return true;
-            // }
     },
     choices: [48, 49]
 };
