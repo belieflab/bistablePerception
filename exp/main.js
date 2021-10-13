@@ -5,36 +5,107 @@ let procedureCalibration= {
     timeline:[calibration0, calibration1, calibration2, calibration3, calibration4, calibration5, calibration6, calibration7, calibration8, calibration9],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
-    choices: [49, 50, 51, 52, 53, 54, 55, 56, 57],
+    choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
 };
+
+
+let trial = {
+    type: 'html-keyboard-response',
+    stimulus: '<p>Hello. This is in a loop. Press R to repeat this trial, or C to continue.<p>',
+    choices: ['r','c']
+};
+
+
+// let procedureInstructions2= {
+//     timeline:[instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10],
+//     // defines which array to draw stimuli from 
+//     // timeline_variables: imageArrayForPrelikingRating,
+//     choices: [48, 49, 'y','n']
+// };
+
+// let loop_node = {
+//     timeline: [repeatInstructions],
+//     loop_function: function(data){
+//         if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press) {
+//         return true;
+//         } else if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n') == data.values()[0].key_press){
+//         return false;
+//         }
+//                 // get the data from the previous trial,
+//             // and check which key was pressed
+//             // var data = jsPsych.data.get().last(1).values()[0];
+//             // if (jsPsych.pluginAPI.compareKeys(data.response, 'n')) {
+//             //     console.log(data);
+//             //     return false;
+//             // } else if (jsPsych.pluginAPI.compareKeys(data.response, 'y')) {
+//             //     console.log(data);
+//             //     return true;
+//             // }
+//     }
+// };
+
+
 
 let procedureInstructions= {
-    timeline:[instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10, repeatInstructions],
+    timeline:[instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10, repeatInstructions],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
-    choices: [49, 50, 51, 52, 53, 54, 55, 56, 57],
+    choices: [48, 49, 110, 112]
 };
 
-let if_node_instructions= {
+
+let cond_node = {
     timeline: [procedureInstructions],
     conditional_function: function(){
-        // get the data from the previous trial,
-        // and check which key was pressed
-        // var data = jsPsych.data.get().last(1).values()[0];
-        var data = jsPsych.data.key_press;
-        console.log(data);
-        if(data == 49){
-            return true;
-        } else {
-            return false;
-        }
+            //     get the data from the previous trial,
+            // and check which key was pressed
+            var data = jsPsych.data.get().last(1).values()[0];
+            if (jsPsych.pluginAPI.compareKeys(data.response, 'n')) {
+                console.log(data);
+                return false;
+            } else if (jsPsych.pluginAPI.compareKeys(data.response, 'y')) {
+                console.log(data);
+                return true;
+            }
     }
 };
+
+
+let repeatProcedureInstructions= {
+    timeline:[instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10, repeatInstructions],
+    // defines which array to draw stimuli from 
+    // timeline_variables: imageArrayForPrelikingRating,
+    choices: [48, 49, 110, 112]
+};
+
+let loop_node = {
+    timeline: [repeatInstructions],
+    loop_function: function(data){
+        if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press) {
+        return true;
+        } else if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n') == data.values()[0].key_press){
+        return false;
+        }
+                // get the data from the previous trial,
+            // and check which key was pressed
+            // var data = jsPsych.data.get().last(1).values()[0];
+            // if (jsPsych.pluginAPI.compareKeys(data.response, 'n')) {
+            //     console.log(data);
+            //     return false;
+            // } else if (jsPsych.pluginAPI.compareKeys(data.response, 'y')) {
+            //     console.log(data);
+            //     return true;
+            // }
+    },
+    choices: [48, 49]
+};
+
+
 
 let procedureDummyTrials= {
     timeline:[neckerCube, interStimulusInterval],
     timeline_variables: practiceTrials.slice(0,5), // 5 trials only
-    choices: [48, 49],
+    choices: [48, 49]
 };
 
 let if_node= {
@@ -45,7 +116,7 @@ let if_node= {
             return true;
         } else if (correctPracticeCounter < 3) {
             return false;
-        } 
+        }
     },
     on_start: function(){
         if (dummyTrialsCounter == 5) {
@@ -134,9 +205,14 @@ let procedureExperimentRun10= {
 // Experimental plan
 
 timeline.push(instructions0);
+timeline.push(instructions1);
 // timeline.push(procedureCalibration);
-timeline.push(procedureInstructions);
-timeline.push(if_node_instructions);
+// timeline.push(procedureInstructions);
+// timeline.push(procedureInstructions);
+// timeline.push(repeatInstructions);
+// timeline.push(loop_node);
+// timeline.push(procedureInstructions);
+timeline.push(loop_node);
 timeline.push(beginPractice);
 timeline.push(procedurePractice);
 timeline.push(initializeExperiment);
