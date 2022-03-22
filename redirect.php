@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Social PRL</title>
+	<title>Bistable Perception</title>
   <script>
   //onbeforeunload in body
   function areYouSure() {

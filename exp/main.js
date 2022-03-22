@@ -5,21 +5,21 @@ let procedureCalibration= {
     timeline:[calibration0, calibration1, calibration2, calibration3, calibration4, calibration5, calibration6, calibration7, calibration8, calibration9],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
-    choices: [49, 50, 51, 52, 53, 54, 55, 56, 57],
+    choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
 };
 
 // let procedureInstructions;
 // switch (version) {
 //     case "continuous fixation":
     let procedureInstructionsFixation = {
-        timeline:[instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a, instructions11],
+        timeline:[instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a],
         // defines which array to draw stimuli from 
         // timeline_variables: imageArrayForPrelikingRating,
         choices: [49, 50, 51, 52, 53, 54, 55, 56, 57],
     };
 
     let procedureInstructions = {
-        timeline:[instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10b, instructions11],
+        timeline:[instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10b],
         // defines which array to draw stimuli from 
         // timeline_variables: imageArrayForPrelikingRating,
         choices: [49, 50, 51, 52, 53, 54, 55, 56, 57],
@@ -33,10 +33,87 @@ let procedureCalibration= {
 //     };
 // }
 
+
+// let repeatProcedureInstructions= {
+//     timeline:[instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10, cond_node],
+//     // defines which array to draw stimuli from 
+//     // timeline_variables: imageArrayForPrelikingRating,
+//     choices: [48, 49, 'y', 'n']
+// };
+
+let trial = {
+    type: 'html-keyboard-response',
+    stimulus: '<p>Hello. This is in a loop. Press Y to repeat this trial, or N to continue.<p>',
+    choices: ['y','n']
+  };
+
+
+let trial2 = {
+    type: 'html-keyboard-response',
+    stimulus: '<p>Hello. This is still a loop. Press Y to repeat this trial, or N to continue.<p>',
+    choices: ['y','n']
+  };
+
+//   let loop_node = {
+//     // timeline: [repeatProcedureInstructions],
+//     timeline: [trial, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10, trial2],
+//     loop_function: function(data){
+//       if(jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press){
+//         return true;
+//       } else if(jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n') == data.values()[0].key_press){
+//         return false;
+//       }
+//     }
+//   };
+
+let loop_node_procedural = {
+    timeline: [procedureInstructions],
+    loop_function: function(data){
+        if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press) {
+            console.log(data.values()[0].key_press);
+            return true;
+        } else if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n') == data.values()[0].key_press){
+            console.log(data.values()[0].key_press);
+            return false;
+        }
+    },
+    on_start: function(){
+        'use strict';
+        if (k == false) {
+            // prevents last trial if all processes are killed
+            jsPsych.finishTrial();
+        }
+    }
+
+};
+
+let loop_node_fixation = {
+    timeline: [procedureInstructionsFixation],
+    loop_function: function(data){
+        if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press) {
+            console.log(data.values()[0].key_press);
+            return true;
+        } else if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n') == data.values()[0].key_press){
+            console.log(data.values()[0].key_press);
+            return false;
+        }
+    },
+    on_start: function(){
+        'use strict';
+        if (k == false) {
+            // prevents last trial if all processes are killed
+            jsPsych.finishTrial();
+        }
+    }
+
+};
+
+
+
 let procedureDummyTrials= {
     timeline:[neckerCube, interStimulusInterval],
     timeline_variables: practiceTrials.slice(0,5), // 5 trials only
-    choices: [48, 49],
+    choices: [48, 49]
 };
 
 let if_node= {
@@ -47,7 +124,7 @@ let if_node= {
             return true;
         } else if (correctPracticeCounter < 3) {
             return false;
-        } 
+        }
     },
     on_start: function(){
         if (dummyTrialsCounter == 5) {
@@ -146,6 +223,10 @@ switch (version) {
         timeline.push(procedureInstructions);
         break;
 }
+
+// timeline.push(loop_node);
+timeline.push(beginPractice);
+
 timeline.push(procedurePractice);
 timeline.push(initializeExperiment);
 timeline.push(procedureExperimentRun1);

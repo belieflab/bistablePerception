@@ -271,7 +271,20 @@ let instructions10b = {
   choices: [32]
 };
 
-let instructions11 = {
+let repeatInstructions = {
+  type: "html-keyboard-response",
+  stimulus: "<p>Press the 'Y' key if you want to repeat the instructions.</p>"+
+  "<p> <i>or</i> </p>"+
+  "<p> Press the 'N' key to continue to the experiment.</p>",
+  // stimulus: '<p>Hello. This is in a loop. Press R to repeat this trial, or C to continue.<p>',
+  choices: ['n','y'],
+  on_finish: function() {
+    'use strict';
+    k = false;
+  }
+};
+
+let beginPractice = {
   type: "html-keyboard-response",
   stimulus: "<p id='practiceCountdown'></p>",
   on_start: practiceCountdown(),
