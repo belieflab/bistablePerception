@@ -1,5 +1,7 @@
 trialIterator = 1;
 
+let k;
+
 // global variable for countdown()
 var percentage = ['10%','20%','30%','40%','half','60%','70%','80%','90%'];
 

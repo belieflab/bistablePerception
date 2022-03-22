@@ -9,11 +9,7 @@ let procedureCalibration= {
 };
 
 
-let trial = {
-    type: 'html-keyboard-response',
-    stimulus: '<p>Hello. This is in a loop. Press R to repeat this trial, or C to continue.<p>',
-    choices: ['r','c']
-};
+
 
 
 // let procedureInstructions2= {
@@ -47,7 +43,7 @@ let trial = {
 
 
 let procedureInstructions= {
-    timeline:[instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10, repeatInstructions],
+    timeline:[instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
     choices: [48, 49, 110, 112]
@@ -67,28 +63,69 @@ let cond_node = {
                 console.log(data);
                 return true;
             }
+    },
+    on_start: function(){
+        'use strict';
+        if (k == false) {
+            // prevents last trial if all processes are killed
+            jsPsych.finishTrial();
+        }
     }
 };
 
 
 let repeatProcedureInstructions= {
-    timeline:[cond_node, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10],
+    timeline:[instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10, cond_node],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
-    choices: [48, 49, 110, 112]
+    choices: [48, 49, 'y', 'n']
 };
 
-let loop_node = {
-    timeline: [repeatProcedureInstructions],
+let trial = {
+    type: 'html-keyboard-response',
+    stimulus: '<p>Hello. This is in a loop. Press Y to repeat this trial, or N to continue.<p>',
+    choices: ['y','n']
+  };
+
+
+let trial2 = {
+    type: 'html-keyboard-response',
+    stimulus: '<p>Hello. This is still a loop. Press Y to repeat this trial, or N to continue.<p>',
+    choices: ['y','n']
+  };
+
+  let loop_node = {
+    // timeline: [repeatProcedureInstructions],
+    timeline: [trial, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10, trial2],
     loop_function: function(data){
-        if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press) {
+      if(jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press){
         return true;
-        } else if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n') == data.values()[0].key_press){
+      } else if(jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n') == data.values()[0].key_press){
         return false;
-        }
-    },
-    choices: [48, 49]
-};
+      }
+    }
+  };
+
+// let loop_node = {
+//     timeline: [procedureInstructions],
+//     loop_function: function(data){
+//         if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press) {
+//             console.log(data.values()[0].key_press);
+//             return true;
+//         } else if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n') == data.values()[0].key_press){
+//             console.log(data.values()[0].key_press);
+//             return false;
+//         }
+//     },
+//     on_start: function(){
+//         'use strict';
+//         if (k == false) {
+//             // prevents last trial if all processes are killed
+//             jsPsych.finishTrial();
+//         }
+//     }
+
+// };
 
 
 
@@ -202,6 +239,7 @@ timeline.push(instructions1);
 // timeline.push(repeatInstructions);
 // timeline.push(loop_node);
 // timeline.push(procedureInstructions);
+// timeline.push(repeatInstructions);
 timeline.push(loop_node);
 timeline.push(beginPractice);
 timeline.push(procedurePractice);

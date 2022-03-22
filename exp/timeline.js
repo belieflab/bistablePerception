@@ -271,7 +271,11 @@ let repeatInstructions = {
   "<p> <i>or</i> </p>"+
   "<p> Press the 'N' key to continue to the experiment.</p>",
   // stimulus: '<p>Hello. This is in a loop. Press R to repeat this trial, or C to continue.<p>',
-  choices: ['n','y']
+  choices: ['n','y'],
+  on_finish: function() {
+    'use strict';
+    k = false;
+  }
 };
 
 let beginPractice = {
