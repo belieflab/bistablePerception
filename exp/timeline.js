@@ -8,6 +8,14 @@ let instructions0 = {
   choices: [32]
 };
 
+let frenchInstructions0 = {
+  type: "html-keyboard-response",
+  stimulus: "<p> Bonjour, merci de prendre part à notre éxpérience!</p>" +
+    "<p>Elle devrait durer environ 30 minutes.</p>" +
+    "<p> <i> Veuillez appuyer sur la touche espace pour continuer.</i> </p>",
+  choices: [32]
+};
+
 // visual angle calibration
 
 
@@ -15,6 +23,13 @@ let calibration0 = {
   type: "html-keyboard-response",
   stimulus: "<p>First, we need your help to properly adjust your screen:</p>" +
     "<p> <i> Press spacebar to continue</i> </p>",
+  choices: [32]
+};
+
+let frenchCalibration0 = {
+  type: "html-keyboard-response",
+  stimulus: "<p>D'abord, nous allons calibrer votre écran ensemble:</p>" +
+    "<p> <i> Veuillez appuyer sur la touche espace pour continuer</i> </p>",
   choices: [32]
 };
 
@@ -133,6 +148,16 @@ let instructions2 = {
     "<source src='stim/nc.mp4' type='video/mp4'>" +
     "</video>" +
     "<p> <i> Press the spacebar to continue</i> </p>",
+  choices: [32, 'y', 'n']
+};
+
+let frenchInstructions2 = {
+  type: "html-keyboard-response",
+  stimulus: "<p>Cette image va vous petre présentée de façon répétée.</p>" +
+    "<video width='320' height='240' autoplay='autoplay'>" +
+    "<source src='stim/nc.mp4' type='video/mp4'>" +
+    "</video>" +
+    "<p> <i> Veuillez appuyer sur la touche espace pour continuer</i> </p>",
   choices: [32, 'y', 'n']
 };
 
