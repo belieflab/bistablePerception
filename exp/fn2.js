@@ -2,7 +2,14 @@
 function practiceCountdown() { // initialize timer
   var sec = 10; // set timer in seconds
   var timer = setInterval(function () {
-    document.getElementById('practiceCountdown').innerHTML = 'The practice is about to start !' + '<br>' + sec;
+    switch (language) {
+      case 'english':
+        document.getElementById('practiceCountdown').innerHTML = 'The practice is about to start !' + '<br>' + sec;
+        break;
+      case 'french':
+        document.getElementById('practiceCountdown').innerHTML = 'FRENCH: The practice is about to start !' + '<br>' + sec;
+        break;
+    }
     sec--;
     if (sec == -1) {
       jsPsych.finishTrial();
@@ -14,7 +21,14 @@ function practiceCountdown() { // initialize timer
 function experimentCountdown() { // initialize timer
   var sec = 10; // set timer in seconds
   var timer = setInterval(function () {
-    document.getElementById('experimentCountdown').innerHTML = 'Good job ! The experiment is about to start !' + '<br>' + sec;
+    switch(language) {
+      case 'english':
+        document.getElementById('experimentCountdown').innerHTML = 'Good job ! The experiment is about to start !' + '<br>' + sec;
+        break;
+      case 'french':
+        document.getElementById('experimentCountdown').innerHTML = 'FRENCH: Good job ! The experiment is about to start !' + '<br>' + sec;
+        break;
+    }
     sec--;
     if (sec == -1) {
       jsPsych.finishTrial();
@@ -54,7 +68,14 @@ function countdown1() { // initialize timer
   var sec = 10; // set timer in seconds
   var percentage = '10%';
   var timer = setInterval(function () {
-    document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+    switch(language) {
+      case 'english':
+        document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+      case 'french':
+        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+    }
     sec--;
     if (sec == -1) {
       jsPsych.finishTrial();
@@ -66,7 +87,14 @@ function countdown2() { // initialize timer
   var sec = 10; // set timer in seconds
   var percentage = '20%';
   var timer = setInterval(function () {
-    document.getElementById('countdown2').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+    switch(language) {
+      case 'english':
+        document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+      case 'french':
+        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+    }
     sec--;
     if (sec == -1) {
       jsPsych.finishTrial();
@@ -78,7 +106,14 @@ function countdown3() { // initialize timer
   var sec = 10; // set timer in seconds
   var percentage = '30%';
   var timer = setInterval(function () {
-    document.getElementById('countdown3').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+    switch(language) {
+      case 'english':
+        document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+      case 'french':
+        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+    }
     sec--;
     if (sec == -1) {
       jsPsych.finishTrial();
@@ -90,7 +125,14 @@ function countdown4() { // initialize timer
   var sec = 10; // set timer in seconds
   var percentage = '40%';
   var timer = setInterval(function () {
-    document.getElementById('countdown4').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+    switch(language) {
+      case 'english':
+        document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+      case 'french':
+        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+    }
     sec--;
     if (sec == -1) {
       jsPsych.finishTrial();
@@ -102,7 +144,14 @@ function countdown5() { // initialize timer
   var sec = 10; // set timer in seconds
   var percentage = 'half';
   var timer = setInterval(function () {
-    document.getElementById('countdown5').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+    switch(language) {
+      case 'english':
+        document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+      case 'french':
+        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+    }
     sec--;
     if (sec == -1) {
       jsPsych.finishTrial();
@@ -114,7 +163,14 @@ function countdown6() { // initialize timer
   var sec = 10; // set timer in seconds
   var percentage = '60%';
   var timer = setInterval(function () {
-    document.getElementById('countdown6').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+    switch(language) {
+      case 'english':
+        document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+      case 'french':
+        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+    }
     sec--;
     if (sec == -1) {
       jsPsych.finishTrial();
@@ -126,7 +182,14 @@ function countdown7() { // initialize timer
   var sec = 10; // set timer in seconds
   var percentage = '70%';
   var timer = setInterval(function () {
-    document.getElementById('countdown7').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+    switch(language) {
+      case 'english':
+        document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+      case 'french':
+        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+    }
     sec--;
     if (sec == -1) {
       jsPsych.finishTrial();
@@ -138,7 +201,14 @@ function countdown8() { // initialize timer
   var sec = 10; // set timer in seconds
   var percentage = '80%';
   var timer = setInterval(function () {
-    document.getElementById('countdown8').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+    switch(language) {
+      case 'english':
+        document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+      case 'french':
+        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+    }
     sec--;
     if (sec == -1) {
       jsPsych.finishTrial();
@@ -150,7 +220,14 @@ function countdown9() { // initialize timer
   var sec = 10; // set timer in seconds
   var percentage = '90%';
   var timer = setInterval(function () {
-    document.getElementById('countdown9').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+    switch(language) {
+      case 'english':
+        document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+      case 'french':
+        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        break;
+    }
     sec--;
     if (sec == -1) {
       jsPsych.finishTrial();

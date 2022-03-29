@@ -482,6 +482,29 @@ let neckerCubePractice = {
   prompt: "<p>1 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 0</p>"
 };
 
+let neckerCubePracticeFrench = {
+  type: "html-keyboard-response",
+  stimulus: function () {
+    var html = "<p>FRENCH:How do you perceive the cube right now ?</p>" +
+      "<img height='125' width='150' src='" + jsPsych.timelineVariable('stimulusLeft', true) + "'>" +
+      "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +
+      "<img height='250' width='300' src='" + jsPsych.timelineVariable('stimulus', true) + "'>" +
+      "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +
+      "<img height='125' width='150' src='" + jsPsych.timelineVariable('stimulusRight', true) + "'>";
+    return html;
+  },
+  on_start: function (data) {
+    // keeps track of practice trial count
+    practiceIterator++;
+    data.index = practiceIterator;
+  },
+  // stimulus: jsPsych.timelineVariable("stimulus"),
+  data: jsPsych.timelineVariable("data"),
+  response_ends_trial: true,
+  choices: [48, 49],
+  prompt: "<p>1 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 0</p>"
+};
+
 let neckerCubePracticeCheckout = {
   type: "html-keyboard-response",
   stimulus: function (data) {
@@ -513,9 +536,47 @@ let neckerCubePracticeCheckout = {
   }
 };
 
+let neckerCubePracticeCheckoutFrench = {
+  type: "html-keyboard-response",
+  stimulus: function (data) {
+    var data = jsPsych.data.get().last(1).values()[0];
+    if (jsPsych.pluginAPI.convertKeyCodeToKeyCharacter(data.key_press) === '1') {
+      var html = "<p>FRENCH: Did you mean you perceived the cube like that ?</p>" +
+        "<img height='250' width='300' src='stim/neckercube_left.png'>";
+      return html;
+    } else if (jsPsych.pluginAPI.convertKeyCodeToKeyCharacter(data.key_press) === '0') {
+      var html = "<p>FRENCH: Did you mean you perceived the cube like that ?</p>" +
+        "<img height='250' width='300' src='stim/neckercube_right.png'>";
+      return html;
+    }
+  },
+  // stimulus: jsPsych.timelineVariable("stimulus"),
+  data: jsPsych.timelineVariable("data"),
+  response_ends_trial: true,
+  choices: [78, 89],
+  prompt: "<p>Press 'Y' for Yes, 'N' for No</p>",
+  on_finish: function (data) {
+    var data = jsPsych.data.get().last(1).values()[0];
+    if (jsPsych.pluginAPI.convertKeyCodeToKeyCharacter(data.key_press) === 'y') {
+      correctPracticeCounter++;
+      console.log(correctPracticeCounter);
+    } else if (jsPsych.pluginAPI.convertKeyCodeToKeyCharacter(data.key_press) === 'n') {
+      correctPracticeCounter = 0;
+      console.log(correctPracticeCounter);
+    }
+  }
+};
+
 let dummyTrialsInstructions = {
   type: "html-keyboard-response",
   stimulus: "<p> Great job ! We are now going to run some practice trials !</p>" +
+    "<p> <i> Press spacebar to continue</i> </p>",
+  choices: [32]
+};
+
+let dummyTrialsInstructionsFrench = {
+  type: "html-keyboard-response",
+  stimulus: "<p> FRENCH: Great job ! We are now going to run some practice trials !</p>" +
     "<p> <i> Press spacebar to continue</i> </p>",
   choices: [32]
 };
@@ -597,9 +658,51 @@ let dataSave = {
     });
   }
 };
+
+let dataSaveFrench = {
+  type: "html-keyboard-response",
+  stimulus: "<p style='color:white;'>FRENCH: Data saving...</p>" +
+    '<div class="sk-cube-grid">' +
+    '<div class="sk-cube sk-cube1"></div>' +
+    '<div class="sk-cube sk-cube2"></div>' +
+    '<div class="sk-cube sk-cube3"></div>' +
+    '<div class="sk-cube sk-cube4"></div>' +
+    '<div class="sk-cube sk-cube5"></div>' +
+    '<div class="sk-cube sk-cube6"></div>' +
+    '<div class="sk-cube sk-cube7"></div>' +
+    '<div class="sk-cube sk-cube8"></div>' +
+    '<div class="sk-cube sk-cube9"></div>' +
+    '</div>' +
+    "<p style='color:white;'>Do not close this window until the text dissapears.</p>",
+  choices: jsPsych.NO_KEYS,
+  trial_duration: 5000,
+  on_finish: function () {
+    saveData("bistable_" + workerId, jsPsych.data.get().csv()); //function with file name and which type of file as the 2 arguments
+    document.getElementById("unload").onbeforeunload = ''; //removes popup (are you sure you want to exit) since data is saved now
+    // returns cursor functionality
+    $(document).ready(function () {
+      $("body").addClass("showCursor");
+    });
+  }
+};
+
 let end = {
   type: "html-keyboard-response",
   stimulus: "<p style='color:white;'>Thank you!</p>" +
+    "<p style='color:white;'>You have successfully completed the experiment and your data has been saved.</p>" +
+    // "<p style='color:white;'>To leave feedback on this task, please click the following link:</p>"+
+    // "<p style='color:white;'><a href="+feedbackLink+">Leave Task Feedback!</a></p>"+
+    // "<p style='color:white;'>Please wait for the experimenter to continue.</p>"+
+    "<p style='color:white;'><i>You may now close the expriment window at anytime.</i></p>",
+  choices: jsPsych.NO_KEYS,
+  // on_load: function() {
+  //   alert(reward);
+  // }
+};
+
+let endFrench = {
+  type: "html-keyboard-response",
+  stimulus: "<p style='color:white;'>Merci!</p>" +
     "<p style='color:white;'>You have successfully completed the experiment and your data has been saved.</p>" +
     // "<p style='color:white;'>To leave feedback on this task, please click the following link:</p>"+
     // "<p style='color:white;'><a href="+feedbackLink+">Leave Task Feedback!</a></p>"+

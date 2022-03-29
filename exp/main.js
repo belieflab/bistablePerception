@@ -38,23 +38,23 @@ let procedureInstructionsDiscontinuousFixationFrench = {
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
 };
 
-let trial = {
-    type: 'html-keyboard-response',
-    stimulus: '<p>Hello. This is in a loop. Press Y to repeat this trial, or N to continue.<p>',
-    choices: ['y', 'n']
-};
+// let trial = {
+//     type: 'html-keyboard-response',
+//     stimulus: '<p>Hello. This is in a loop. Press Y to repeat this trial, or N to continue.<p>',
+//     choices: ['y', 'n']
+// };
 
 
-let trial2 = {
-    type: 'html-keyboard-response',
-    stimulus: '<p>Hello. This is still a loop. Press Y to repeat this trial, or N to continue.<p>',
-    choices: ['y', 'n']
-};
+// let trial2 = {
+//     type: 'html-keyboard-response',
+//     stimulus: '<p>Hello. This is still a loop. Press Y to repeat this trial, or N to continue.<p>',
+//     choices: ['y', 'n']
+// };
 
-let trials = {
-    timeline: [trial, trial2],
-    choices: [48, 49]
-};
+// let trials = {
+//     timeline: [trial, trial2],
+//     choices: [48, 49]
+// };
 
 
 
@@ -127,8 +127,43 @@ let if_node = {
     }
 };
 
+let if_node_french = {
+    timeline: [dummyTrialsInstructionsFrench, procedureDummyTrials],
+    conditional_function: function practiceCounter() {
+        // if correct answers = 3 in a row -> proceed to dummy trials then quit practice after 5 dummy trials, elseif continue practice
+        if (correctPracticeCounter == 3) {
+            return true;
+        } else if (correctPracticeCounter < 3) {
+            return false;
+        }
+    },
+    on_start: function () {
+        if (dummyTrialsCounter == 5) {
+            // prevents last trial if all processes are killed
+            jsPsych.finishTrial();
+        }
+    }
+};
+
 let procedurePractice = {
     timeline: [neckerCubePractice, neckerCubePracticeCheckout, if_node],
+    timeline_variables: practiceTrials,
+    choices: [48, 49, 78, 89],
+    // kills all processes until last trial
+    on_finish: function () {
+        if (dummyTrialsCounter == 5) {
+            i = 0;
+            while (i < practiceTrials.length) { // loops through to the end of all possible trials
+                jsPsych.endCurrentTimeline();
+                console.log('killProcess');
+                i++;
+            }
+        }
+    }
+};
+
+let procedurePracticeFrench = {
+    timeline: [neckerCubePracticeFrench, neckerCubePracticeCheckoutFrench, if_node_french],
     timeline_variables: practiceTrials,
     choices: [48, 49, 78, 89],
     // kills all processes until last trial
@@ -204,23 +239,23 @@ let procedureExperimentRun10 = {
     choices: [48, 49],
 };
 
-let continuousInstructionsEnglish = {
-    timeline: [instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a, trial2],
+let continuousFixationInstructionsEnglish = {
+    timeline: [instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a],
     // choices: [48, 49]
 };
 
-let discontinuousInstructionsEnglish = {
-    timeline: [instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a, trial2],
+let discontinuousFixationInstructionsEnglish = {
+    timeline: [instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a],
     // choices: [48, 49]
 };
 
-let continuousInstructionsFrench = {
-    timeline: [instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a, trial2],
+let continuousFixationInstructionsFrench = {
+    timeline: [instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a],
     // choices: [48, 49]
 };
 
-let discontinuousInstructionsFrench = {
-    timeline: [frenchInstructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a, trial2],
+let discontinuousFixationInstructionsFrench = {
+    timeline: [frenchInstructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a],
     // choices: [48, 49]
 };
 
@@ -245,22 +280,22 @@ switch (language) {
         switch (version) {
             case "continuous fixation":
                 timeline.push(procedureInstructionsContinuousFixationEnglish);
-                timeline.push(continuousInstructionsEnglish);
+                // timeline.push(continuousInstructionsEnglish);
                 break;
             case "discontinuous fixation":
                 timeline.push(procedureInstructionsDiscontinuousFixationEnglish);
-                timeline.push(discontinuousInstructionsEnglish);
+                // timeline.push(discontinuousInstructionsEnglish);
                 break;
         }
         case "french":
             switch (version) {
                 case "continuous fixation":
                     timeline.push(procedureInstructionsContinuousFixationFrench);
-                    timeline.push(continuousInstructionsFrench);
+                    // timeline.push(continuousInstructionsFrench);
                     break;
                 case "discontinuous fixation":
                     timeline.push(procedureInstructionsDiscontinuousFixationFrench);
-                    timeline.push(discontinuousInstructionsEnglish);
+                    // timeline.push(discontinuousInstructionsEnglish);
                     break;
             }
 }
@@ -276,9 +311,25 @@ switch (language) {
 //         break;
 // }
 
-var loop_node = {
-    timeline: [trials],
-    // timeline: [instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a, trial2],
+// var loop_node = {
+//     timeline: [trials],
+//     // timeline: [instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a, trial2],
+//     loop_function: function (data) {
+//         if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press) {
+//             console.log(jsPsych.data.get().last(1).values()[0]);
+//             return true;
+//         } else if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n') == data.values()[0].key_press) {
+//             console.log(jsPsych.data.get().last(1).values()[0]);
+//             lol = false;
+//             return false;
+//         }
+//     }
+// };
+
+
+
+var loop_node_fixation_english = {
+    timeline: [continuousFixationInstructionsEnglish],
     loop_function: function (data) {
         if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press) {
             console.log(jsPsych.data.get().last(1).values()[0]);
@@ -291,12 +342,8 @@ var loop_node = {
     }
 };
 
-
-
-var lol;
-
-var loop_node_fixation = {
-    timeline: [fixationInstructions],
+var loop_node_fixation_french = {
+    timeline: [continuousFixationInstructionsFrench],
     loop_function: function (data) {
         if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press) {
             console.log(jsPsych.data.get().last(1).values()[0]);
@@ -309,8 +356,8 @@ var loop_node_fixation = {
     }
 };
 
-var loop_node_discontinuous = {
-    timeline: [discontinuousInstructions],
+var loop_node_discontinuous_english = {
+    timeline: [discontinuousFixationInstructionsEnglish],
     loop_function: function (data) {
         if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press) {
             console.log(jsPsych.data.get().last(1).values()[0]);
@@ -323,8 +370,22 @@ var loop_node_discontinuous = {
     }
 };
 
-let practiceDiscontinuous = {
-    timeline: [loop_node_discontinuous],
+var loop_node_discontinuous_french = {
+    timeline: [discontinuousFixationInstructionsFrench],
+    loop_function: function (data) {
+        if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press) {
+            console.log(jsPsych.data.get().last(1).values()[0]);
+            return true;
+        } else if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n') == data.values()[0].key_press) {
+            console.log(jsPsych.data.get().last(1).values()[0]);
+            lol = false;
+            return false;
+        }
+    }
+};
+
+let practiceDiscontinuousEnglish = {
+    timeline: [loop_node_discontinuous_english],
     // timeline: [repeatProcedureInstructions],
     // choices: [78, 89],
     // kills all processes until last trial
@@ -335,8 +396,8 @@ let practiceDiscontinuous = {
     }
 };
 
-let practiceFixation = {
-    timeline: [loop_node_fixation],
+let practiceDiscontinuousFrench = {
+    timeline: [loop_node_discontinuous_french],
     // timeline: [repeatProcedureInstructions],
     // choices: [78, 89],
     // kills all processes until last trial
@@ -347,9 +408,10 @@ let practiceFixation = {
     }
 };
 
-let instructionslol = {
-    timeline: [loop_node],
-    choices: [48, 49, 78, 89],
+let practiceFixationEnglish = {
+    timeline: [loop_node_fixation_english],
+    // timeline: [repeatProcedureInstructions],
+    // choices: [78, 89],
     // kills all processes until last trial
     on_load: function () {
         if (lol == false) {
@@ -358,41 +420,108 @@ let instructionslol = {
     }
 };
 
-switch (version) {
-    case "continuous fixation":
-        timeline.push(practiceFixation);
-        break;
-    case "discontinuous fixation":
-        timeline.push(practiceDiscontinuous);
-        break;
+let practiceFixationFrench = {
+    timeline: [loop_node_fixation_french],
+    // timeline: [repeatProcedureInstructions],
+    // choices: [78, 89],
+    // kills all processes until last trial
+    on_load: function () {
+        if (lol == false) {
+            jsPsych.endCurrentTimeline();
+        }
+    }
+};
+
+// let instructionslol = {
+//     timeline: [loop_node],
+//     choices: [48, 49, 78, 89],
+//     // kills all processes until last trial
+//     on_load: function () {
+//         if (lol == false) {
+//             jsPsych.endCurrentTimeline();
+//         }
+//     }
+// };
+
+
+switch (language) {
+    case "english":
+        switch (version) {
+            case "continuous fixation":
+                timeline.push(practiceFixationEnglish);
+                break;
+            case "discontinuous fixation":
+                timeline.push(practiceDiscontinuousEnglish);
+                break;
+        }
+        case "french":
+            switch (version) {
+                case "continuous fixation":
+                    timeline.push(practiceFixationFrench);
+                    break;
+                case "discontinuous fixation":
+                    timeline.push(practiceDiscontinuousFrench);
+                    break;
+            }
 }
 
-// timeline.push(instructionslol);
 
+switch (language) {
+    case "english":
 
-timeline.push(beginPractice);
+        timeline.push(beginPractice);
+        timeline.push(procedurePracticeEnglish);
+        timeline.push(initializeExperiment);
+        timeline.push(procedureExperimentRun1);
+        // timeline.push(break1);
+        // timeline.push(procedureExperimentRun2);
+        // timeline.push(break2);
+        // timeline.push(procedureExperimentRun3);
+        // timeline.push(break3);
+        // timeline.push(procedureExperimentRun4);
+        // timeline.push(break4);
+        // timeline.push(procedureExperimentRun5);
+        // timeline.push(break5);
+        // timeline.push(procedureExperimentRun6);
+        // timeline.push(break6);
+        // timeline.push(procedureExperimentRun7);
+        // timeline.push(break7);
+        // timeline.push(procedureExperimentRun8);
+        // timeline.push(break8);
+        // timeline.push(procedureExperimentRun9);
+        // timeline.push(break9);
+        // timeline.push(procedureExperimentRun10);
+        timeline.push(dataSave);
+        timeline.push(end);
+        break;
 
-timeline.push(procedurePractice);
-timeline.push(initializeExperiment);
-timeline.push(procedureExperimentRun1);
-// timeline.push(break1);
-// timeline.push(procedureExperimentRun2);
-// timeline.push(break2);
-// timeline.push(procedureExperimentRun3);
-// timeline.push(break3);
-// timeline.push(procedureExperimentRun4);
-// timeline.push(break4);
-// timeline.push(procedureExperimentRun5);
-// timeline.push(break5);
-// timeline.push(procedureExperimentRun6);
-// timeline.push(break6);
-// timeline.push(procedureExperimentRun7);
-// timeline.push(break7);
-// timeline.push(procedureExperimentRun8);
-// timeline.push(break8);
-// timeline.push(procedureExperimentRun9);
-// timeline.push(break9);
-// timeline.push(procedureExperimentRun10);
+    case "french":
 
-timeline.push(dataSave);
-timeline.push(end);
+        timeline.push(beginPractice);
+        timeline.push(procedurePracticeFrench);
+        timeline.push(initializeExperiment);
+        timeline.push(procedureExperimentRun1);
+        // timeline.push(break1);
+        // timeline.push(procedureExperimentRun2);
+        // timeline.push(break2);
+        // timeline.push(procedureExperimentRun3);
+        // timeline.push(break3);
+        // timeline.push(procedureExperimentRun4);
+        // timeline.push(break4);
+        // timeline.push(procedureExperimentRun5);
+        // timeline.push(break5);
+        // timeline.push(procedureExperimentRun6);
+        // timeline.push(break6);
+        // timeline.push(procedureExperimentRun7);
+        // timeline.push(break7);
+        // timeline.push(procedureExperimentRun8);
+        // timeline.push(break8);
+        // timeline.push(procedureExperimentRun9);
+        // timeline.push(break9);
+        // timeline.push(procedureExperimentRun10);
+
+        timeline.push(dataSaveFrench);
+        timeline.push(endFrench);
+        break;
+
+}
