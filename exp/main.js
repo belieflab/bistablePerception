@@ -1,19 +1,33 @@
 // main order in which things are pushed to timeline 
 
 let procedureCalibration = {
-    timeline: [calibration0, calibration1, calibration2, calibration3, calibration4, calibration5, calibration6, calibration7, calibration8, calibration9],
+    timeline: [calibration0, calibration1, calibration2, calibration3, calibration4, calibration5, calibration6, calibration7, calibration8, calibration9, calibration10],
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
 };
 
-let procedureInstructionsFixation = {
+let procedureInstructionsContinuousFixationEnglish = {
     timeline: [instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
 };
 
-let procedureInstructions = {
+let procedureInstructionsDiscontinuousFixationEnglish = {
     timeline: [instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10b],
+    // defines which array to draw stimuli from 
+    // timeline_variables: imageArrayForPrelikingRating,
+    choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
+};
+
+let procedureInstructionsContinuousFixationFrench = {
+    timeline: [frenchInstructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a],
+    // defines which array to draw stimuli from 
+    // timeline_variables: imageArrayForPrelikingRating,
+    choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
+};
+
+let procedureInstructionsDiscontinuousFixationFrench = {
+    timeline: [frenchInstructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10b],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
@@ -187,16 +201,28 @@ let procedureExperimentRun10 = {
 // Experimental plan
 
 timeline.push(instructions0);
-// timeline.push(procedureCalibration);
+timeline.push(procedureCalibration);
 
-// switch (version) {
-//     case "continuous fixation":
-//         timeline.push(procedureInstructionsFixation);
-//         break;
-//     case "discontinuous fixation":
-//         timeline.push(procedureInstructions);
-//         break;
-// }
+switch (language) {
+    case "english":
+        switch(version) {
+            case "continuous fixation":
+                timeline.push(procedureInstructionsContinuousFixationEnglish);
+                break;
+            case "discontinuous fixation":
+                timeline.push(procedureInstructionsDiscontinuousFixationEnglish);
+                break;
+        }
+    case "french":
+        switch(version) {
+            case "continuous fixation":
+                timeline.push(procedureInstructionsContinuousFixationFrench);
+                break;
+            case "discontinuous fixation":
+                timeline.push(procedureInstructionsDiscontinuousFixationFrench);
+                break;
+        }
+}
 
 // repeat instructions
 
@@ -299,16 +325,16 @@ let instructionslol = {
     }
 };
 
-// switch (version) {
-//     case "continuous fixation":
-//         timeline.push(practiceFixation);
-//         break;
-//     case "discontinuous fixation":
-//         timeline.push(practiceDiscontinuous);
-//         break;
-// }
+switch (version) {
+    case "continuous fixation":
+        timeline.push(practiceFixation);
+        break;
+    case "discontinuous fixation":
+        timeline.push(practiceDiscontinuous);
+        break;
+}
 
-timeline.push(instructionslol);
+// timeline.push(instructionslol);
 
 
 timeline.push(beginPractice);

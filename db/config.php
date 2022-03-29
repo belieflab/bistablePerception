@@ -1,19 +1,19 @@
 <?php
 /* SELECT A LANGUAGE */
-$language = 'english';
-// $language = 'french';
+// $language = 'english';
+$language = 'french';
 // $language = 'german';
 
 /* assign PHP variable to JS variable */
 switch($language){
   case 'english':
-    '<script type="text/javascript">language = "english";</script>';
+    '<script type="text/javascript">const language = "english";</script>';
     break;
   case 'french':  
-    '<script type="text/javascript">language = "french";</script>';
+    '<script type="text/javascript">const language = "french";</script>';
     break;
   case 'german':  
-    '<script type="text/javascript">language = "german";</script>';
+    '<script type="text/javascript">const language = "german";</script>';
     break;
 }
 

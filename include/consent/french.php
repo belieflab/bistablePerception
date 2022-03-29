@@ -19,7 +19,7 @@
     <h2>
       
  </h2>
-    <p id="consentInstructions" class="consent">
+    <p style="color:black;" id="consentInstructions" class="consent">
       <b>Titre de l'étude:</b> Croyances et traits de personnalité
       <br><br>
       <b>Chercheur principal:</b> Philip R. Corlett, PhD

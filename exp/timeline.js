@@ -100,6 +100,15 @@ let calibration9 = {
   choices: [32]
 };
 
+let calibration10 = {
+  type: "html-keyboard-response",
+  stimulus: "<p>Just one more thing: It is important for you to perform this experiment in a dark room.<p>" +
+    "<p>Please make sure to turn off any lights and close your curtains or blinds to make the room as dark as possible.</p>" +
+    "<p>When you have done this, press spacebar to continue.</p>",
+  choices: [32]
+};
+
+
 
 // instructions
 
@@ -107,6 +116,13 @@ let instructions1 = {
   type: "html-keyboard-response",
   stimulus: "<p> Thank you, we are now ready to begin the experiment!</p>" +
     "<p> <i> Press spacebar to continue</i> </p>",
+  choices: [32]
+};
+
+let frenchInstructions1 = {
+  type: "html-keyboard-response",
+  stimulus: "<p> Merci, nous pouvons maintenant commencer l'expérience !</p>" +
+    "<p> <i> Veuillez appuyer sur la touche espace pour continuer</i> </p>",
   choices: [32]
 };
 
