@@ -1,38 +1,38 @@
 // main order in which things are pushed to timeline 
 
 let procedureCalibrationEnglish = {
-    timeline: [calibration0, calibration1, calibration2, calibration3, calibration4, calibration5, calibration6, calibration7, calibration8, calibration9, calibration10],
+    timeline: [calibration1, calibration3, calibration4, calibration5, calibration6, calibration7, calibration8, calibration9, calibration10],
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
 };
 
 let procedureCalibrationFrench = {
-    timeline: [frenchCalibration0, calibration1, calibration2, calibration3, calibration4, calibration5, calibration6, calibration7, calibration8, calibration9, calibration10],
+    timeline: [frenchCalibration1, frenchCalibration3, frenchCalibration4, frenchCalibration5, frenchCalibration6, frenchCalibration7, frenchCalibration8, frenchCalibration9, frenchCalibration10],
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
 };
 
 let procedureInstructionsContinuousFixationEnglish = {
-    timeline: [instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a],
+    timeline: [instructions1, instructions2, instructions3, instructions4, instructions4_1, instructions5, instructions5_1, instructions6, instructions6_1, instructions7, instructions8, instructions9, instructions10a],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
 };
 
 let procedureInstructionsDiscontinuousFixationEnglish = {
-    timeline: [instructions1, instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10b],
+    timeline: [instructions1, instructions2, instructions3, instructions4, instructions4_1, instructions5, instructions5_1, instructions6, instructions6_1, instructions7, instructions8, instructions9, instructions10b],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
 };
 
 let procedureInstructionsContinuousFixationFrench = {
-    timeline: [frenchInstructions1, frenchInstructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a],
+    timeline: [frenchInstructions1, frenchInstructions2, frenchInstructions3, frenchInstructions4, frenchInstructions5, frenchInstructions6, frenchInstructions7, frenchInstructions8, frenchInstructions9, frenchInstructions10a],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
 };
 
 let procedureInstructionsDiscontinuousFixationFrench = {
-    timeline: [frenchInstructions1, frenchInstructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10b],
+    timeline: [frenchInstructions1, frenchInstructions2, frenchInstructions3, frenchInstructions4, frenchInstructions5, frenchInstructions6, frenchInstructions7, frenchInstructions8, frenchInstructions9, frenchInstructions10b],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
@@ -128,7 +128,7 @@ let if_node = {
 };
 
 let if_node_french = {
-    timeline: [dummyTrialsInstructionsFrench, procedureDummyTrials],
+    timeline: [frenchDummyTrialsInstructions, procedureDummyTrials],
     conditional_function: function practiceCounter() {
         // if correct answers = 3 in a row -> proceed to dummy trials then quit practice after 5 dummy trials, elseif continue practice
         if (correctPracticeCounter == 3) {
@@ -163,7 +163,7 @@ let procedurePractice = {
 };
 
 let procedurePracticeFrench = {
-    timeline: [neckerCubePracticeFrench, neckerCubePracticeCheckoutFrench, if_node_french],
+    timeline: [frenchNeckerCubePractice, frenchNeckerCubePracticeCheckout, if_node_french],
     timeline_variables: practiceTrials,
     choices: [48, 49, 78, 89],
     // kills all processes until last trial
@@ -250,12 +250,12 @@ let discontinuousFixationInstructionsEnglish = {
 };
 
 let continuousFixationInstructionsFrench = {
-    timeline: [instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a],
+    timeline: [frenchInstructions1, frenchInstructions2, frenchInstructions3, frenchInstructions4, frenchInstructions5, frenchInstructions6, frenchInstructions7, frenchInstructions8, frenchInstructions9, frenchInstructions10a],
     // choices: [48, 49]
 };
 
 let discontinuousFixationInstructionsFrench = {
-    timeline: [frenchInstructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a],
+    timeline: [frenchInstructions1, frenchInstructions2, frenchInstructions3, frenchInstructions4, frenchInstructions5, frenchInstructions6, frenchInstructions7, frenchInstructions8, frenchInstructions9, frenchInstructions10b],
     // choices: [48, 49]
 };
 
@@ -520,8 +520,8 @@ switch (language) {
         // timeline.push(break9);
         // timeline.push(procedureExperimentRun10);
 
-        timeline.push(dataSaveFrench);
-        timeline.push(endFrench);
+        timeline.push(frenchDataSave);
+        timeline.push(frenchEnd);
         break;
 
 }

@@ -7,7 +7,7 @@ function practiceCountdown() { // initialize timer
         document.getElementById('practiceCountdown').innerHTML = 'The practice is about to start !' + '<br>' + sec;
         break;
       case 'french':
-        document.getElementById('practiceCountdown').innerHTML = 'FRENCH: The practice is about to start !' + '<br>' + sec;
+        document.getElementById('practiceCountdown').innerHTML = "L'entraînement va commencer !" + '<br>' + sec;
         break;
     }
     sec--;
@@ -26,7 +26,7 @@ function experimentCountdown() { // initialize timer
         document.getElementById('experimentCountdown').innerHTML = 'Good job ! The experiment is about to start !' + '<br>' + sec;
         break;
       case 'french':
-        document.getElementById('experimentCountdown').innerHTML = 'FRENCH: Good job ! The experiment is about to start !' + '<br>' + sec;
+        document.getElementById('experimentCountdown').innerHTML = "Beau travail ! L'expérience va commencer !" + '<br>' + sec;
         break;
     }
     sec--;
@@ -73,7 +73,7 @@ function countdown1() { // initialize timer
         document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
         break;
       case 'french':
-        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        document.getElementById('countdown1').innerHTML = "Vous avez effectué " + percentage + " de l'expérience!" + '<br>' + sec;
         break;
     }
     sec--;
@@ -92,7 +92,7 @@ function countdown2() { // initialize timer
         document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
         break;
       case 'french':
-        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        document.getElementById('countdown1').innerHTML = "Vous avez effectué " + percentage + " de l'expérience!" + '<br>' + sec;
         break;
     }
     sec--;
@@ -111,7 +111,7 @@ function countdown3() { // initialize timer
         document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
         break;
       case 'french':
-        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        document.getElementById('countdown1').innerHTML = "Vous avez effectué " + percentage + " de l'expérience!" + '<br>' + sec;
         break;
     }
     sec--;
@@ -130,7 +130,7 @@ function countdown4() { // initialize timer
         document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
         break;
       case 'french':
-        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        document.getElementById('countdown1').innerHTML = "Vous avez effectué " + percentage + " de l'expérience!" + '<br>' + sec;
         break;
     }
     sec--;
@@ -149,7 +149,7 @@ function countdown5() { // initialize timer
         document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
         break;
       case 'french':
-        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        document.getElementById('countdown1').innerHTML = "Vous avez effectué " + percentage + " de l'expérience!" + '<br>' + sec;
         break;
     }
     sec--;
@@ -168,7 +168,7 @@ function countdown6() { // initialize timer
         document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
         break;
       case 'french':
-        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        document.getElementById('countdown1').innerHTML = "Vous avez effectué " + percentage + " de l'expérience!" + '<br>' + sec;
         break;
     }
     sec--;
@@ -187,7 +187,7 @@ function countdown7() { // initialize timer
         document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
         break;
       case 'french':
-        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        document.getElementById('countdown1').innerHTML = "Vous avez effectué " + percentage + " de l'expérience!" + '<br>' + sec;
         break;
     }
     sec--;
@@ -206,7 +206,7 @@ function countdown8() { // initialize timer
         document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
         break;
       case 'french':
-        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        document.getElementById('countdown1').innerHTML = "Vous avez effectué " + percentage + " de l'expérience!" + '<br>' + sec;
         break;
     }
     sec--;
@@ -225,7 +225,7 @@ function countdown9() { // initialize timer
         document.getElementById('countdown1').innerHTML = 'You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
         break;
       case 'french':
-        document.getElementById('countdown1').innerHTML = 'FRENCH You completed ' + percentage + ' of the experiment!' + '<br>' + sec;
+        document.getElementById('countdown1').innerHTML = "Vous avez effectué " + percentage + " de l'expérience!" + '<br>' + sec;
         break;
     }
     sec--;
