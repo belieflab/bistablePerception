@@ -72,7 +72,7 @@
 
 <div id="load" style="display: none">
 <h3 id='pass'>Toutes les règles de validation ont été passées avec succès. Cliquez pour charger l'expérience.</h3>
-<button id="nextButton" class="noCursor" onclick="startExperiment()"><script>load</script></button>
+<button id="nextButton" class="noCursor" onclick="startExperimentFrench()"><script>load</script></button>
 <!-- <p id="nextButton" style="display: none" >please make sure you are in a quiet place. When you are ready to begin, click 'START'</p> -->
 <br>
 </div>

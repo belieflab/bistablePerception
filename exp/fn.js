@@ -1,7 +1,16 @@
 /* start the experiment */
-function startExperiment() {
+function startExperimentEnglish() {
   jsPsych.init({
     timeline: timeline,
+    // default_iti: delayList[0],
+    show_progress_bar: true,
+    //  preload_images: [stimArrayForPrelikingPhase, stimArrayForAssociativeInverted, stimArrayForAssociativeTextile, longDelayForAssociative1500msPath, shortDelayForAssociative500msPath],
+  });
+}
+
+function startExperimentFrench() {
+  jsPsych.init({
+    timeline: timeline_french,
     // default_iti: delayList[0],
     show_progress_bar: true,
     //  preload_images: [stimArrayForPrelikingPhase, stimArrayForAssociativeInverted, stimArrayForAssociativeTextile, longDelayForAssociative1500msPath, shortDelayForAssociative500msPath],

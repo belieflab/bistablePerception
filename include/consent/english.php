@@ -72,13 +72,13 @@
 
 <div id="load" style="display: none">
 <h3 id='pass'>All validation rules were passed successfully. Click to load the experiment.</h3>
-<button id="nextButton" class="noCursor" onclick="startExperiment()"><script>load</script></button>
+<button id="nextButton" class="noCursor" onclick="startExperimentEnglish()"><script>load</script></button>
 <!-- <p id="nextButton" style="display: none" >please make sure you are in a quiet place. When you are ready to begin, click 'START'</p> -->
 <br>
 </div>
 <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 <script>$("button.loadMain").click(function(){
-      $.getScript("exp/timeline.js");
+      $.getScript("exp/timeline_english.js");
       // $.getScript("exp/main.js");
   }); </script>
 
