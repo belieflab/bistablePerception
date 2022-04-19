@@ -6,8 +6,8 @@
 
   // select embedded fixation cross inside neckercube
   // continuous fixation is the embedded version
-  // const version = "continuous fixation";
-  const version = "discontinuous fixation";
+  const version = "continuous fixation";
+  // const version = "discontinuous fixation";
 
   let neckercubeNeutral;
   let neckercubeLeft;

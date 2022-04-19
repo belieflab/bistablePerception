@@ -346,7 +346,7 @@ let instructions5_1 = {
     trial_duration: null,
     response_ends_trial: true,
     on_load: function() {
-      document.getElementById('instructionDelay').innerHTML = '<i>Veuillez appuyer sur la touche espace pour continuer.</i>';
+      document.getElementById('instructionDelay').innerHTML = '<i>Press the spacebar to continue</i>';
     }
 };
 
@@ -360,17 +360,22 @@ let frenchInstructions5 = {
     "<p id='instructionDelay'> <i>&nbsp</i> </p>",
     choices: [jsPsych.NO_KEYS],
     trial_duration: 4000,
-  response_ends_trial: true,
-  // on_start: instructionDelay()
-  on_start: function () {
-    var sec = 3; // set timer in seconds
-    var timer = setInterval(function () {
-      sec--;
-      if (sec == -1) {
-        document.getElementById('instructionDelay').innerHTML = '<i>Press the spacebar to continue.</i>';
-      }
-    }, 1000);
-  }
+    response_ends_trial: false,
+};
+
+let frenchInstructions5_1 = {
+  type: "html-keyboard-response",
+  stimulus: "<p>Le cube va apparaître et disparaître très rapidement:</p>" +
+  "<video width='320' height='240' autoplay='autoplay' loop>" +
+  "<source src='stim/intermittent.mp4' type='video/mp4'>" +
+  "</video>" +
+  "<p id='instructionDelay'> <i>&nbsp</i> </p>",
+    choices: [32],
+    trial_duration: null,
+    response_ends_trial: true,
+    on_load: function() {
+      document.getElementById('instructionDelay').innerHTML = '<i>Veuillez appuyer sur la touche espace pour continuer.</i>';
+    }
 };
 
 let instructions6 = {
@@ -396,30 +401,35 @@ let instructions6_1 = {
     trial_duration: null,
     response_ends_trial: true,
     on_load: function() {
-      document.getElementById('instructionDelay').innerHTML = '<i>Press the spacebar to continue.</i>';
+      document.getElementById('instructionDelay').innerHTML = '<i>Press the spacebar to continue</i>';
     }
 };
 
 let frenchInstructions6 = {
   type: "html-keyboard-response",
   stimulus: "<p>Pour chaque apparition du cube nous vous demanderons comment vous le percevez sur le moment:</p>" +
+  "<video width='320' height='240' autoplay='autoplay' loop>" +
+  "<source src='stim/all.mp4' type='video/mp4'>" +
+  "</video>" +
+  "<p id='instructionDelay'> <i>&nbsp</i> </p>",
+    choices: [jsPsych.NO_KEYS],
+    trial_duration: 4000,
+    response_ends_trial: false,
+};
+
+let frenchInstructions6_1 = {
+  type: "html-keyboard-response",
+  stimulus: "<p>Pour chaque apparition du cube nous vous demanderons comment vous le percevez sur le moment:</p>" +
     "<video width='320' height='240' autoplay='autoplay' loop>" +
     "<source src='stim/all.mp4' type='video/mp4'>" +
     "</video>" +
     "<p id='instructionDelay'> <i>&nbsp</i> </p>",
-  choices: [32, 'y', 'n'],
-  trial_duration: 20000,
-  response_ends_trial: true,
-  // on_start: instructionDelay()
-  on_start: function () {
-    var sec = 4; // set timer in seconds
-    var timer = setInterval(function () {
-      sec--;
-      if (sec == -1) {
-        document.getElementById('instructionDelay').innerHTML = '<i>Veuillez appuyer sur la touche espace pour continuer.</i>';
-      }
-    }, 1000);
-  }
+    choices: [32],
+    trial_duration: null,
+    response_ends_trial: true,
+    on_load: function() {
+      document.getElementById('instructionDelay').innerHTML = '<i>Veuillez appuyer sur la touche espace pour continuer.</i>';
+    }
 };
 
 let instructions7 = {
@@ -429,7 +439,12 @@ let instructions7 = {
     "<source src='stim/all.mp4' type='video/mp4'>" +
     "</video>" +
     "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32, 'y', 'n']
+    // "<p id='instructionDelay'> <i>&nbsp</i> </p>",
+  choices: [32, 'y', 'n'],
+  // on_finish: function () {
+  //   // clear the spacebar message before the next slide
+  //   document.getElementById('instructionDelay').innerHTML = '<p> </p>';
+  //   }
 };
 
 let frenchInstructions7 = {
@@ -439,11 +454,12 @@ let frenchInstructions7 = {
     "<source src='stim/all.mp4' type='video/mp4'>" +
     "</video>" +
     "<p> <i> Veuillez appuyer sur la touche espace pour continuer.</i> </p>",
+    // "<p id='instructionDelay'> <i>&nbsp</i> </p>",
   choices: [32, 'y', 'n'],
-  on_finish: function () {
-    // clear the spacebar message before the next slide
-    document.getElementById('instructionDelay').innerHTML = '<p> </p>';
-  }
+  // on_finish: function () {
+  //   // clear the spacebar message before the next slide
+  //   document.getElementById('instructionDelay').innerHTML = '<p> </p>';
+  // }
 };
 
 let instructions8 = {

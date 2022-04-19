@@ -4,8 +4,12 @@ function practiceCountdown() { // initialize timer
   var timer = setInterval(function () {
     switch (language) {
       case 'english':
-        document.getElementById('practiceCountdown').innerHTML = 'The practice is about to start !' + '<br>' + sec;
-        break;
+        try {
+          document.getElementById('practiceCountdown').innerHTML = 'The practice is about to start !' + '<br>' + sec;
+          break;
+        } catch(err){
+          //
+        }
       case 'french':
         document.getElementById('practiceCountdown').innerHTML = "L'entraînement va commencer !" + '<br>' + sec;
         break;

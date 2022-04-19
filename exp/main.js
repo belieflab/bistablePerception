@@ -25,81 +25,18 @@ let procedureInstructionsDiscontinuousFixationEnglish = {
 };
 
 let procedureInstructionsContinuousFixationFrench = {
-    timeline: [frenchInstructions1, frenchInstructions2, frenchInstructions3, frenchInstructions4, frenchInstructions5, frenchInstructions6, frenchInstructions7, frenchInstructions8, frenchInstructions9, frenchInstructions10a],
+    timeline: [frenchInstructions1, frenchInstructions2, frenchInstructions3, frenchInstructions4,  frenchInstructions4_1, frenchInstructions5, frenchInstructions5_1, frenchInstructions6, frenchInstructions6_1, frenchInstructions7, frenchInstructions8, frenchInstructions9, frenchInstructions10a],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
 };
 
 let procedureInstructionsDiscontinuousFixationFrench = {
-    timeline: [frenchInstructions1, frenchInstructions2, frenchInstructions3, frenchInstructions4, frenchInstructions5, frenchInstructions6, frenchInstructions7, frenchInstructions8, frenchInstructions9, frenchInstructions10b],
+    timeline: [frenchInstructions1, frenchInstructions2, frenchInstructions3, frenchInstructions4,  frenchInstructions4_1, frenchInstructions5, frenchInstructions5_1, frenchInstructions6, frenchInstructions6_1, frenchInstructions7, frenchInstructions8, frenchInstructions9, frenchInstructions10b],
     // defines which array to draw stimuli from 
     // timeline_variables: imageArrayForPrelikingRating,
     choices: [49, 50, 51, 52, 53, 54, 55, 56, 57]
 };
-
-// let trial = {
-//     type: 'html-keyboard-response',
-//     stimulus: '<p>Hello. This is in a loop. Press Y to repeat this trial, or N to continue.<p>',
-//     choices: ['y', 'n']
-// };
-
-
-// let trial2 = {
-//     type: 'html-keyboard-response',
-//     stimulus: '<p>Hello. This is still a loop. Press Y to repeat this trial, or N to continue.<p>',
-//     choices: ['y', 'n']
-// };
-
-// let trials = {
-//     timeline: [trial, trial2],
-//     choices: [48, 49]
-// };
-
-
-
-
-// let loop_node_procedural = {
-//     timeline: [procedureInstructions],
-//     loop_function: function (data) {
-//         if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press) {
-//             console.log(data.values()[0].key_press);
-//             return true;
-//         } else if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n') == data.values()[0].key_press) {
-//             console.log(data.values()[0].key_press);
-//             return false;
-//         }
-//     },
-//     on_start: function () {
-//         'use strict';
-//         if (k == false) {
-//             // prevents last trial if all processes are killed
-//             jsPsych.finishTrial();
-//         }
-//     }
-
-// };
-
-// let loop_node_fixation = {
-//     timeline: [procedureInstructionsFixation],
-//     loop_function: function (data) {
-//         if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y') == data.values()[0].key_press) {
-//             console.log(data.values()[0].key_press);
-//             return true;
-//         } else if (jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n') == data.values()[0].key_press) {
-//             console.log(data.values()[0].key_press);
-//             return false;
-//         }
-//     },
-//     on_start: function () {
-//         'use strict';
-//         if (k == false) {
-//             // prevents last trial if all processes are killed
-//             jsPsych.finishTrial();
-//         }
-//     }
-
-// };
 
 
 
@@ -145,7 +82,7 @@ let if_node_french = {
     }
 };
 
-let procedurePractice = {
+let procedurePracticeEnglish = {
     timeline: [neckerCubePractice, neckerCubePracticeCheckout, if_node],
     timeline_variables: practiceTrials,
     choices: [48, 49, 78, 89],
@@ -259,6 +196,7 @@ let discontinuousFixationInstructionsFrench = {
     // choices: [48, 49]
 };
 
+
 // Experimental plan
 
 
@@ -287,17 +225,17 @@ switch (language) {
                 // timeline.push(discontinuousInstructionsEnglish);
                 break;
         }
-        case "french":
-            switch (version) {
-                case "continuous fixation":
-                    timeline.push(procedureInstructionsContinuousFixationFrench);
-                    // timeline.push(continuousInstructionsFrench);
-                    break;
-                case "discontinuous fixation":
-                    timeline.push(procedureInstructionsDiscontinuousFixationFrench);
-                    // timeline.push(discontinuousInstructionsEnglish);
-                    break;
-            }
+        // case "french":
+        //     switch (version) {
+        //         case "continuous fixation":
+        //             timeline.push(procedureInstructionsContinuousFixationFrench);
+        //             // timeline.push(continuousInstructionsFrench);
+        //             break;
+        //         case "discontinuous fixation":
+        //             timeline.push(procedureInstructionsDiscontinuousFixationFrench);
+        //             // timeline.push(discontinuousInstructionsEnglish);
+        //             break;
+        //     }
 }
 
 // repeat instructions
@@ -454,15 +392,15 @@ switch (language) {
                 timeline.push(practiceDiscontinuousEnglish);
                 break;
         }
-        case "french":
-            switch (version) {
-                case "continuous fixation":
-                    timeline.push(practiceFixationFrench);
-                    break;
-                case "discontinuous fixation":
-                    timeline.push(practiceDiscontinuousFrench);
-                    break;
-            }
+        // case "french":
+        //     switch (version) {
+        //         case "continuous fixation":
+        //             timeline.push(practiceFixationFrench);
+        //             break;
+        //         case "discontinuous fixation":
+        //             timeline.push(practiceDiscontinuousFrench);
+        //             break;
+        //     }
 }
 
 
