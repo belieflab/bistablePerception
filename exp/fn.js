@@ -10,7 +10,7 @@ function startExperimentEnglish() {
 
 function startExperimentFrench() {
   jsPsych.init({
-    timeline: timeline_french,
+    timeline: timeline,
     // default_iti: delayList[0],
     show_progress_bar: true,
     //  preload_images: [stimArrayForPrelikingPhase, stimArrayForAssociativeInverted, stimArrayForAssociativeTextile, longDelayForAssociative1500msPath, shortDelayForAssociative500msPath],

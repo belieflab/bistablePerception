@@ -78,7 +78,7 @@
 </div>
 <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 <script>$("button.loadMain").click(function(){
-      $.getScript("exp/timeline.js");
+      $.getScript("exp/timeline_french.js");
       // $.getScript("exp/main.js"); 
     }); </script>
 

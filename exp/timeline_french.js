@@ -1,14 +1,8 @@
 let timeline = [];
 
-let instructions0 = {
-  type: "html-keyboard-response",
-  stimulus: "<p> Hello and thank you for taking part in our experiment!</p>" +
-    "<p>It should take about 30 minutes.</p>" +
-    "<p> <i> Press spacebar to continue</i> </p>",
-  choices: [32]
-};
 
-let frenchInstructions0 = {
+
+let instructions0 = {
   type: "html-keyboard-response",
   stimulus: "<p> Bonjour, merci de prendre part à notre éxpérience !</p>" +
     "<p>Celle-ci durera environ 30 minutes.</p>" +
@@ -19,14 +13,9 @@ let frenchInstructions0 = {
 // visual angle calibration
 
 
-let calibration1 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>First, we need your help to properly adjust your screen:</p>" +
-    "<p> <i> Press spacebar to continue</i> </p>",
-  choices: [32]
-};
 
-let frenchCalibration1 = {
+
+let calibration1 = {
   type: "html-keyboard-response",
   stimulus: "<p>D'abord, nous allons calibrer votre écran ensemble:</p>" +
     "<p> <i> Veuillez appuyer sur la touche espace pour continuer.</i> </p>",
@@ -51,24 +40,16 @@ let frenchCalibration1 = {
 //   choices: [32]
 // };
 
-// let frenchCalibration2 = {
+// let calibration2 = {
 //   type: "html-keyboard-response",
 //   stimulus: "<p>D'abord, nous devons nous assurer que vous êtes assis(e) à la bonne distance de votre écran.</p>" +
 //     "<p> <i> Veuillez appuyer sur la touche espace pour continuer.</i> </p>",
 //   choices: [32]
 // };
 
-let calibration3 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>First, we need your help to properly adjust the distance betwen you and your screen.</p>" +
-    "<video autoplay='autoplay' loop>" +
-    "<source src='stim/distance.mp4' type='video/mp4'>" +
-    "</video>" +
-    "<p> <i> Press spacebar to continue</i> </p>",
-  choices: [32]
-};
 
-let frenchCalibration3 = {
+
+let calibration3 = {
   type: "html-keyboard-response",
   stimulus: "<p>D'abord, nous allons régler ensemble la distance entre votre écran et vous.</p>" +
     "<video autoplay='autoplay' loop>" +
@@ -78,15 +59,9 @@ let frenchCalibration3 = {
   choices: [32]
 };
 
-let calibration4 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>It should be 60cm / 24inches (The lenght of two A4 sheets of paper)</p>" +
-    "<img height='490px' width='450px' src='stim/correctdistance.jpg'>" +
-    "<p> <i> Press spacebar to continue</i> </p>",
-  choices: [32]
-};
 
-let frenchCalibration4 = {
+
+let calibration4 = {
   type: "html-keyboard-response",
   stimulus: "<p>Elle devrait être d'environ 60cm / 24pouces (La longueur de deux feuilles de papier A4 environ)</p>" +
     "<img height='490px' width='450px' src='stim/correctdistance.jpg'>" +
@@ -94,17 +69,9 @@ let frenchCalibration4 = {
   choices: [32]
 };
 
-let calibration5 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>Next, we need your help to properly adjust the angle of your screen:</p>" +
-    "<video autoplay='autoplay' loop>" +
-    "<source src='stim/angle.mp4' type='video/mp4'>" +
-    "</video>" +
-    "<p> <i> Press spacebar to continue</i> </p>",
-  choices: [32]
-};
 
-let frenchCalibration5 = {
+
+let calibration5 = {
   type: "html-keyboard-response",
   stimulus: "<p>Ensuite, nous allons régler ensemble l'angle de votre écran.</p>" +
     "<video autoplay='autoplay' loop>" +
@@ -114,15 +81,9 @@ let frenchCalibration5 = {
   choices: [32]
 };
 
-let calibration6 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>It should be perpendicular to the top of your desk or level surface.</p>" +
-    "<img height='350px' width='450px' src='stim/correctangle.jpg'>" +
-    "<p> <i> Press spacebar to continue</i> </p>",
-  choices: [32]
-};
 
-let frenchCalibration6 = {
+
+let calibration6 = {
   type: "html-keyboard-response",
   stimulus: "<p>Celui-ci devrait être perpendiculaire à votre bureau, ou au niveau du sol.</p>" +
     "<img height='350px' width='450px' src='stim/correctangle.jpg'>" +
@@ -130,16 +91,9 @@ let frenchCalibration6 = {
   choices: [32]
 };
 
-let calibration7 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>Last, we need your help to adjust the height of your screen.</p>" +
-    "<video autoplay='autoplay' loop>" +
-    "<source src='stim/screenheight.mp4' type='video/mp4'>" +
-    "</video>" + "<p> <i> Press spacebar to continue</i> </p>",
-  choices: [32]
-};
 
-let frenchCalibration7 = {
+
+let calibration7 = {
   type: "html-keyboard-response",
   stimulus: "<p>Enfin, nous allons régler ensemble la hauteur de votre écran.</p>" +
     "<video autoplay='autoplay' loop>" +
@@ -149,16 +103,9 @@ let frenchCalibration7 = {
 };
 
 
-let calibration8 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>The middle of the screen should be aligned at eye level.<p>" +
-    "<p>If you have a laptop, please use books to achieve the correct height.</p>" +
-    "<img height='350px' width='450px' src='stim/correctheight.jpg'>" +
-    "<p> <i> Press spacebar to continue</i> </p>",
-  choices: [32]
-};
 
-let frenchCalibration8 = {
+
+let calibration8 = {
   type: "html-keyboard-response",
   stimulus: "<p>Le milieu de l'écran devrait être aligné au niveau des yeux.<p>" +
     "<p>Si vous avez un ordinateur portable, vous pouvez utiliser des livres pour faire ce réglage, soyez créatif(ve) !</p>" +
@@ -168,15 +115,9 @@ let frenchCalibration8 = {
 };
 
 
-let calibration9 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>Are you sure everything is set up correctly?<p>" +
-    "<p>If you are sure, press spacebar to continue.</p>" +
-    "<p>If not, please restart the experiment by refreshing your browser.</p>",
-  choices: [32]
-};
 
-let frenchCalibration9 = {
+
+let calibration9 = {
   type: "html-keyboard-response",
   stimulus: "<p>Êtes-vous sûr(e) que tout est réglé comme il faut ?<p>" +
     "<p>Si oui, veuillez appuyer sur la touche espace.</p>" +
@@ -185,15 +126,9 @@ let frenchCalibration9 = {
 };
 
 
-let calibration10 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>Just one more thing: It is important for you to perform this experiment in a dark room.<p>" +
-    "<p>Please make sure to turn off any lights and close your curtains or blinds to make the room as dark as possible.</p>" +
-    "<p>When you have done this, press spacebar to continue.</p>",
-  choices: [32]
-};
 
-let frenchCalibration10 = {
+
+let calibration10 = {
   type: "html-keyboard-response",
   stimulus: "<p>Plus qu'une dernière chose : il est très important que vous réalisiez cette expérience dans le noir.<p>" +
     "<p>Veillez à éteindre toutes les lumières et à fermer vos rideaux ou vos stores pour rendre la pièce aussi sombre que possible.</p>" +
@@ -203,31 +138,18 @@ let frenchCalibration10 = {
 
 // instructions
 
-let instructions1 = {
-  type: "html-keyboard-response",
-  stimulus: "<p> Thank you, we are now ready to begin the experiment!</p>" +
-    "<p> <i> Press spacebar to continue</i> </p>",
-  choices: [32]
-};
 
-let frenchInstructions1 = {
+
+let instructions1 = {
   type: "html-keyboard-response",
   stimulus: "<p> Merci, nous pouvons maintenant commencer l'expérience !</p>" +
     "<p> <i> Veuillez appuyer sur la touche espace pour continuer.</i> </p>",
   choices: [32]
 };
 
-let instructions2 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>This image will be presented to you repeatedly:</p>" +
-    "<video width='320' height='240' autoplay='autoplay'>" +
-    "<source src='stim/nc.mp4' type='video/mp4'>" +
-    "</video>" +
-    "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32, 'y', 'n']
-};
 
-let frenchInstructions2 = {
+
+let instructions2 = {
   type: "html-keyboard-response",
   stimulus: "<p>Cette image va vous petre présentée de façon répétée.</p>" +
     "<video width='320' height='240' autoplay='autoplay'>" +
@@ -237,17 +159,9 @@ let frenchInstructions2 = {
   choices: [32, 'y', 'n']
 };
 
-let instructions3 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>There are two ways of seeing it:</p>" +
-    "<video width='320' height='240' autoplay='autoplay'>" +
-    "<source src='stim/nc.mp4' type='video/mp4'>" +
-    "</video>" +
-    "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32, 'y', 'n']
-};
 
-let frenchInstructions3 = {
+
+let instructions3 = {
   type: "html-keyboard-response",
   stimulus: "<p>Il y a deux façons de la voir:</p>" +
     "<video width='320' height='240' autoplay='autoplay'>" +
@@ -257,40 +171,11 @@ let frenchInstructions3 = {
   choices: [32, 'y', 'n']
 };
 
+
+
+
+
 let instructions4 = {
-  type: "html-keyboard-response",
-  stimulus: "<br><br><br>" +
-    "<p>You can interpret it as a cube seen from above...</p>" +
-    "<video width='320' height='240' autoplay='autoplay' loop>" +
-    "<source src='stim/all.mp4' type='video/mp4'>" +
-    "</video>" +
-    "<p>...or as a cube seen from below.</p>" +
-    "<br>" +
-    "<p id='instructionDelay'> <i>&nbsp</i> </p>",
-  choices: [jsPsych.NO_KEYS],
-  trial_duration: 4000,
-  response_ends_trial: true,
-};
-
-let instructions4_1 = {
-  type: "html-keyboard-response",
-  stimulus: "<br><br><br>" +
-    "<p>You can interpret it as a cube seen from above...</p>" +
-    "<video width='320' height='240' autoplay='autoplay' loop>" +
-    "<source src='stim/all.mp4' type='video/mp4'>" +
-    "</video>" +
-    "<p>...or as a cube seen from below.</p>" +
-    "<br>" +
-    "<p id='instructionDelay'> <i>&nbsp</i> </p>",
-  choices: [32],
-  trial_duration: null,
-  response_ends_trial: true,
-  on_load: function() {
-    document.getElementById('instructionDelay').innerHTML = '<i>Press the spacebar to continue</i>';
-  }
-};
-
-let frenchInstructions4 = {
   type: "html-keyboard-response",
   stimulus: "<br><br><br>" +
     "<p>Vous pouvez l'interpréter comme un cube vu du dessus...</p>" +
@@ -305,7 +190,7 @@ let frenchInstructions4 = {
   response_ends_trial: false,
 };
 
-let frenchInstructions4_1 = {
+let instructions4_1 = {
   type: "html-keyboard-response",
   stimulus: "<br><br><br>" +
     "<p>Vous pouvez l'interpréter comme un cube vu du dessus...</p>" +
@@ -323,34 +208,11 @@ let frenchInstructions4_1 = {
   }
 };
 
-let instructions5 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>The cube will appear and disappear very quickly:</p>" +
-    "<video width='320' height='240' autoplay='autoplay' loop>" +
-    "<source src='stim/intermittent.mp4' type='video/mp4'>" +
-    "</video>" +
-    "<p id='instructionDelay'> <i>&nbsp</i> </p>",
-  choices: [jsPsych.NO_KEYS],
-  trial_duration: 4000,
-  response_ends_trial: false,
-};
 
-let instructions5_1 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>The cube will appear and disappear very quickly:</p>" +
-    "<video width='320' height='240' autoplay='autoplay' loop>" +
-    "<source src='stim/intermittent.mp4' type='video/mp4'>" +
-    "</video>" +
-    "<p id='instructionDelay'> <i>&nbsp</i> </p>",
-    choices: [32],
-    trial_duration: null,
-    response_ends_trial: true,
-    on_load: function() {
-      document.getElementById('instructionDelay').innerHTML = '<i>Press the spacebar to continue</i>';
-    }
-};
 
-let frenchInstructions5 = { 
+
+
+let instructions5 = { 
   // TO CHANGE
   type: "html-keyboard-response",
   stimulus: "<p>Le cube va apparaître et disparaître très rapidement:</p>" +
@@ -363,7 +225,7 @@ let frenchInstructions5 = {
     response_ends_trial: false,
 };
 
-let frenchInstructions5_1 = {
+let instructions5_1 = {
   type: "html-keyboard-response",
   stimulus: "<p>Le cube va apparaître et disparaître très rapidement:</p>" +
   "<video width='320' height='240' autoplay='autoplay' loop>" +
@@ -378,34 +240,11 @@ let frenchInstructions5_1 = {
     }
 };
 
+
+
+
+
 let instructions6 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>For each appearance of the cube, we will ask you to indicate how you perceive it, at the moment:</p>" +
-    "<video width='320' height='240' autoplay='autoplay' loop>" +
-    "<source src='stim/all.mp4' type='video/mp4'>" +
-    "</video>" +
-    "<p id='instructionDelay'> <i>&nbsp</i> </p>",
-    choices: [jsPsych.NO_KEYS],
-    trial_duration: 4000,
-    response_ends_trial: false,
-};
-
-let instructions6_1 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>For each appearance of the cube, we will ask you to indicate how you perceive it, at the moment:</p>" +
-    "<video width='320' height='240' autoplay='autoplay' loop>" +
-    "<source src='stim/all.mp4' type='video/mp4'>" +
-    "</video>" +
-    "<p id='instructionDelay'> <i>&nbsp</i> </p>",
-    choices: [32],
-    trial_duration: null,
-    response_ends_trial: true,
-    on_load: function() {
-      document.getElementById('instructionDelay').innerHTML = '<i>Press the spacebar to continue</i>';
-    }
-};
-
-let frenchInstructions6 = {
   type: "html-keyboard-response",
   stimulus: "<p>Pour chaque apparition du cube nous vous demanderons comment vous le percevez sur le moment:</p>" +
   "<video width='320' height='240' autoplay='autoplay' loop>" +
@@ -417,7 +256,7 @@ let frenchInstructions6 = {
     response_ends_trial: false,
 };
 
-let frenchInstructions6_1 = {
+let instructions6_1 = {
   type: "html-keyboard-response",
   stimulus: "<p>Pour chaque apparition du cube nous vous demanderons comment vous le percevez sur le moment:</p>" +
     "<video width='320' height='240' autoplay='autoplay' loop>" +
@@ -432,22 +271,9 @@ let frenchInstructions6_1 = {
     }
 };
 
-let instructions7 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>You will need to answer as fast as possible:</p>" +
-    "<video width='320' height='240' autoplay='autoplay' loop>" +
-    "<source src='stim/all.mp4' type='video/mp4'>" +
-    "</video>" +
-    "<p> <i> Press the spacebar to continue</i> </p>",
-    // "<p id='instructionDelay'> <i>&nbsp</i> </p>",
-  choices: [32, 'y', 'n'],
-  // on_finish: function () {
-  //   // clear the spacebar message before the next slide
-  //   document.getElementById('instructionDelay').innerHTML = '<p> </p>';
-  //   }
-};
 
-let frenchInstructions7 = {
+
+let instructions7 = {
   type: "html-keyboard-response",
   stimulus: "<p>Vous devrez répondre aussi vite que possible:</p>" +
     "<video width='320' height='240' autoplay='autoplay' loop>" +
@@ -462,30 +288,9 @@ let frenchInstructions7 = {
   // }
 };
 
-let instructions8 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>Press the 0 key when you perceive the cube from above:</p>" +
-    "<p>(When the front side of the cube appears on the right)</p>" +
-    "<video width='320' height='240' autoplay='autoplay' loop>" +
-    "<source src='stim/sfa.mp4' type='video/mp4'>" +
-    "</video>" +
-    "<p id='instructionDelay'> <i>&nbsp</i> </p>",
-  choices: [48, 'y', 'n'],
-  trial_duration: 20000,
-  response_ends_trial: true,
-  // on_start: instructionDelay()
-  on_start: function () {
-    var sec = 4; // set timer in seconds
-    var timer = setInterval(function () {
-      sec--;
-      if (sec == -1) {
-        document.getElementById('instructionDelay').innerHTML = '<i>Press the 0 key to continue</i>';
-      }
-    }, 1000);
-  }
-};
 
-let frenchInstructions8 = {
+
+let instructions8 = {
   type: "html-keyboard-response",
   stimulus: "<p>Appuyez sur la touche 0 de votre clavier lorque vous percevez le cube comme vu du dessus.</p>" +
     "<p>(Lorsque la face avant du cube apparaît à droite)</p>" +
@@ -510,30 +315,9 @@ let frenchInstructions8 = {
   }
 };
 
-let instructions9 = {
-  type: "html-keyboard-response",
-  stimulus: "<p>Press the 1 key when you perceive the cube from below:</p>" +
-    "<p>(When the front side of the cube appears on the left)</p>" +
-    "<video width='320' height='240' autoplay='autoplay' loop>" +
-    "<source src='stim/sfb.mp4' type='video/mp4'>" +
-    "</video>" +
-    "<p id='instructionDelay'> <i>&nbsp</i> </p>",
-  choices: [49, 'y', 'n'],
-  trial_duration: 20000,
-  response_ends_trial: true,
-  // on_start: instructionDelay()
-  on_start: function () {
-    var sec = 4; // set timer in seconds
-    var timer = setInterval(function () {
-      sec--;
-      if (sec == -1) {
-        document.getElementById('instructionDelay').innerHTML = '<i>Press the 1 key to continue</i>';
-      }
-    }, 1000);
-  }
-};
 
-let frenchInstructions9 = {
+
+let instructions9 = {
   type: "html-keyboard-response",
   stimulus: "<p>Appuyez sur la touche 1 de votre clavier lorque vous percevez le cube comme vu du dessous.</p>" +
     "<p>((Lorsque la face avant du cube apparaît à gauche)</p>" +
@@ -556,50 +340,27 @@ let frenchInstructions9 = {
   }
 };
 
-let instructions10a = {
-  type: "html-keyboard-response",
-  stimulus: "<p>Just one last thing: Please focus your gaze on the central cross throughout the experiment!</p>" +
-    "<img height='250' width='300' src='stim/nc_fixation.png'>" +
-    "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32, 'y', 'n']
-};
 
-let frenchInstructions10a = {
+
+let instructions10a = {
   type: "html-keyboard-response",
   stimulus: "<p>Une dernière chose ! Veuillez garder votre regard fixé sur la croix centrale pendant toute la durée de l'experience.</p>" +
     "<img height='250' width='300' src='stim/nc_fixation.png'>" +
     "<p> <i> Veuillez appuyer sur la touche espace pour continuer.</i> </p>",
   choices: [32, 'y', 'n']
 };
+
+
 
 let instructions10b = {
   type: "html-keyboard-response",
-  stimulus: "<p>Just one last thing: Please focus your gaze on the center of the cube throughout the experiment!</p>" +
-    "<img height='250' width='300' src='stim/nc.png'>" +
-    "<p> <i> Press the spacebar to continue</i> </p>",
-  choices: [32, 'y', 'n']
-};
-
-let frenchInstructions10b = {
-  type: "html-keyboard-response",
   stimulus: "<p>Une dernière chose ! Veuillez garder votre regard fixé sur la croix centrale pendant toute la durée de l'experience.</p>" +
     "<img height='250' width='300' src='stim/nc.png'>" +
     "<p> <i> Veuillez appuyer sur la touche espace pour continuer.</i> </p>",
   choices: [32, 'y', 'n']
 };
 
-let repeatInstructions = {
-  type: "html-keyboard-response",
-  stimulus: "<p>Press the 'Y' key if you want to repeat the instructions.</p>" +
-    "<p> <i>or</i> </p>" +
-    "<p> Press the 'N' key to continue to the experiment.</p>",
-  // stimulus: '<p>Hello. This is in a loop. Press R to repeat this trial, or C to continue.<p>',
-  choices: ['n', 'y'],
-  on_finish: function () {
-    'use strict';
-    k = false;
-  }
-};
+
 
 let frenchRepeatInstructions = {
   type: "html-keyboard-response",
@@ -748,30 +509,9 @@ let neckerCube = {
   },
 };
 
-let neckerCubePractice = {
-  type: "html-keyboard-response",
-  stimulus: function () {
-    var html = "<p>How do you perceive the cube right now ?</p>" +
-      "<img height='125' width='150' src='" + jsPsych.timelineVariable('stimulusLeft', true) + "'>" +
-      "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +
-      "<img height='250' width='300' src='" + jsPsych.timelineVariable('stimulus', true) + "'>" +
-      "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" +
-      "<img height='125' width='150' src='" + jsPsych.timelineVariable('stimulusRight', true) + "'>";
-    return html;
-  },
-  on_start: function (data) {
-    // keeps track of practice trial count
-    practiceIterator++;
-    data.index = practiceIterator;
-  },
-  // stimulus: jsPsych.timelineVariable("stimulus"),
-  data: jsPsych.timelineVariable("data"),
-  response_ends_trial: true,
-  choices: [48, 49],
-  prompt: "<p>1 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 0</p>"
-};
 
-let frenchNeckerCubePractice = {
+
+let neckerCubePractice = {
   type: "html-keyboard-response",
   stimulus: function () {
     var html = "<p>Comment percevez vous le cube en ce moment ?</p>" +
@@ -794,38 +534,8 @@ let frenchNeckerCubePractice = {
   prompt: "<p>1 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 0</p>"
 };
 
-let neckerCubePracticeCheckout = {
-  type: "html-keyboard-response",
-  stimulus: function (data) {
-    var data = jsPsych.data.get().last(1).values()[0];
-    if (jsPsych.pluginAPI.convertKeyCodeToKeyCharacter(data.key_press) === '1') {
-      var html = "<p>Did you mean you perceived the cube like that ?</p>" +
-        "<img height='250' width='300' src='stim/neckercube_left.png'>";
-      return html;
-    } else if (jsPsych.pluginAPI.convertKeyCodeToKeyCharacter(data.key_press) === '0') {
-      var html = "<p>Did you mean you perceived the cube like that ?</p>" +
-        "<img height='250' width='300' src='stim/neckercube_right.png'>";
-      return html;
-    }
-  },
-  // stimulus: jsPsych.timelineVariable("stimulus"),
-  data: jsPsych.timelineVariable("data"),
-  response_ends_trial: true,
-  choices: [78, 89],
-  prompt: "<p>Press 'Y' for Yes, 'N' for No</p>",
-  on_finish: function (data) {
-    var data = jsPsych.data.get().last(1).values()[0];
-    if (jsPsych.pluginAPI.convertKeyCodeToKeyCharacter(data.key_press) === 'y') {
-      correctPracticeCounter++;
-      console.log(correctPracticeCounter);
-    } else if (jsPsych.pluginAPI.convertKeyCodeToKeyCharacter(data.key_press) === 'n') {
-      correctPracticeCounter = 0;
-      console.log(correctPracticeCounter);
-    }
-  }
-};
 
-let frenchNeckerCubePracticeCheckout = {
+let neckerCubePracticeCheckout = {
   type: "html-keyboard-response",
   stimulus: function (data) {
     var data = jsPsych.data.get().last(1).values()[0];
@@ -856,14 +566,8 @@ let frenchNeckerCubePracticeCheckout = {
   }
 };
 
-let dummyTrialsInstructions = {
-  type: "html-keyboard-response",
-  stimulus: "<p> Great job ! We are now going to run some practice trials !</p>" +
-    "<p> <i> Press spacebar to continue</i> </p>",
-  choices: [32]
-};
 
-let frenchDummyTrialsInstructions = {
+let dummyTrialsInstructions = {
   type: "html-keyboard-response",
   stimulus: "<p> Parfait ! Nous allons maintenant procéder à quelques essais d'entraînement !</p>" +
     "<p> <i>  Veuillez appuyer sur la touche espace pour continuer.</i> </p>",
@@ -923,34 +627,7 @@ let interStimulusInterval = {
 
 let dataSave = {
   type: "html-keyboard-response",
-  stimulus: "<p style='color:white;'>Data saving...</p>" +
-    '<div class="sk-cube-grid">' +
-    '<div class="sk-cube sk-cube1"></div>' +
-    '<div class="sk-cube sk-cube2"></div>' +
-    '<div class="sk-cube sk-cube3"></div>' +
-    '<div class="sk-cube sk-cube4"></div>' +
-    '<div class="sk-cube sk-cube5"></div>' +
-    '<div class="sk-cube sk-cube6"></div>' +
-    '<div class="sk-cube sk-cube7"></div>' +
-    '<div class="sk-cube sk-cube8"></div>' +
-    '<div class="sk-cube sk-cube9"></div>' +
-    '</div>' +
-    "<p style='color:white;'>Do not close this window until the text dissapears.</p>",
-  choices: jsPsych.NO_KEYS,
-  trial_duration: 5000,
-  on_finish: function () {
-    saveData("bistable_" + workerId, jsPsych.data.get().csv()); //function with file name and which type of file as the 2 arguments
-    document.getElementById("unload").onbeforeunload = ''; //removes popup (are you sure you want to exit) since data is saved now
-    // returns cursor functionality
-    $(document).ready(function () {
-      $("body").addClass("showCursor");
-    });
-  }
-};
-
-let frenchDataSave = {
-  type: "html-keyboard-response",
-  stimulus: "<p style='color:white;'>FRENCH: Data saving...</p>" +
+  stimulus: "<p style='color:white;'>Données en cours de sauvergarde...</p>" +
     '<div class="sk-cube-grid">' +
     '<div class="sk-cube sk-cube1"></div>' +
     '<div class="sk-cube sk-cube2"></div>' +
@@ -975,21 +652,8 @@ let frenchDataSave = {
   }
 };
 
-let end = {
-  type: "html-keyboard-response",
-  stimulus: "<p style='color:white;'>Thank you!</p>" +
-    "<p style='color:white;'>You have successfully completed the experiment and your data has been saved.</p>" +
-    // "<p style='color:white;'>To leave feedback on this task, please click the following link:</p>"+
-    // "<p style='color:white;'><a href="+feedbackLink+">Leave Task Feedback!</a></p>"+
-    // "<p style='color:white;'>Please wait for the experimenter to continue.</p>"+
-    "<p style='color:white;'><i>You may now close the expriment window at anytime.</i></p>",
-  choices: jsPsych.NO_KEYS,
-  // on_load: function() {
-  //   alert(reward);
-  // }
-};
 
-let frenchEnd = {
+let end = {
   type: "html-keyboard-response",
   stimulus: "<p style='color:white;'>Merci!</p>" +
     "<p style='color:white;'>Vous avez terminé l'experience avec succès et vos données ont été enregistrées.</p>" +
