@@ -624,6 +624,19 @@ let interStimulusInterval = {
 //   choices: [48, 49]
 // };
 
+let controlRunInstructionsAbove = {
+  type: "html-keyboard-response",
+  stimulus: "<p>Beau travail ! Pour cette partie, nous aimerions que vous effectuiez le même exercice,  mais, pendant que vous le faites, nous aimerions que vous essayiez de forcer votre perception sur 'vu d'en haut' autant que vous le pouvez.</p>" +
+    "<p> <i>Appuyez sur la touche espace pour continuer.</i> </p>",
+  choices: [32, 'y', 'n']
+};
+
+let controlRunInstructionsBelow = {
+  type: "html-keyboard-response",
+  stimulus: "<p>Beau travail ! Pour cette partie, nous aimerions que vous effectuiez le même exercice,  mais, pendant que vous le faites, nous aimerions que vous essayiez de forcer votre perception sur 'vu d'en dessous' autant que vous le pouvez.</p>" +
+    "<p> <i>Appuyez sur la touche espace pour continuer.</i> </p>",
+  choices: [32, 'y', 'n']
+};
 
 let dataSave = {
   type: "html-keyboard-response",

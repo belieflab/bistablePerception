@@ -489,6 +489,14 @@ let neckerCube = {
       dummyTrialsCounter++;
       console.log(dummyTrialsCounter);
     }
+  let thisKeyPress = data.key_press;
+  data.response = thisKeyPress;
+  let lastKeyPress = jsPsych.data.get().last(1).values()[0].key_press;
+  if(lastKeyPress == thisKeyPress){
+  data.survival_probability = 1;
+  } else{
+  data.survival_probability = 0;
+  }
   },
   on_start: function (data) {
     // keeps track of experiment trial count
@@ -613,6 +621,21 @@ let interStimulusInterval = {
 //   response_ends_trial: true,
 //   choices: [48, 49]
 // };
+
+
+let controlRunInstructionsAbove = {
+  type: "html-keyboard-response",
+  stimulus: '<p>For this part, we would like you to perform exactly the same exercise, but, as you do so, we would like you to try to hold the "seen from above (front face on the right)" perception as much as you can.</p>' +
+    "<p> <i> Press the spacebar to continue</i> </p>",
+  choices: [32, 'y', 'n']
+};
+
+let controlRunInstructionsBelow = {
+  type: "html-keyboard-response",
+  stimulus: '<p>For this part, we would like you to perform exactly the same exercise, but, as you do so, we would like you to try to hold the "seen from below (front face on the left)" perception as much as you can.</p>' +
+    "<p> <i> Press the spacebar to continue</i> </p>",
+  choices: [32, 'y', 'n']
+};
 
 
 let dataSave = {

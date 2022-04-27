@@ -120,6 +120,20 @@ let procedureExperimentRun10 = {
     choices: [48, 49],
 };
 
+
+let procedureExperimentRunControlAbove = {
+    timeline: [neckerCube, interStimulusInterval],
+    timeline_variables: experimentTrialsRunControlAbove,
+    choices: [48, 49],
+};
+
+
+let procedureExperimentRunControlBelow = {
+    timeline: [neckerCube, interStimulusInterval],
+    timeline_variables: experimentTrialsRunControlBelow,
+    choices: [48, 49],
+};
+
 let continuousFixationInstructions = {
     timeline: [instructions2, instructions3, instructions4, instructions5, instructions6, instructions7, instructions8, instructions9, instructions10a],
     // choices: [48, 49]
@@ -145,6 +159,7 @@ switch (version) {
         // timeline.push(discontinuousInstructions);
         break;
 }
+
 
 // repeat instructions
 
@@ -247,8 +262,8 @@ switch (version) {
 
 
 
-timeline.push(beginPractice);
-timeline.push(procedurePractice);
+// timeline.push(beginPractice);
+// timeline.push(procedurePractice);
 timeline.push(initializeExperiment);
 timeline.push(procedureExperimentRun1);
 timeline.push(break1);
@@ -269,6 +284,20 @@ timeline.push(break1);
 // timeline.push(procedureExperimentRun9);
 // timeline.push(break9);
 // timeline.push(procedureExperimentRun10);
+switch (workerId%2) {
+    case 0:
+        timeline.push(controlRunInstructionsAbove);
+        timeline.push(procedureExperimentRunControlAbove);
+        timeline.push(controlRunInstructionsBelow);
+        timeline.push(procedureExperimentRunControlBelow);
+        break;
+    case 1:
+        timeline.push(controlRunInstructionsBelow);
+        timeline.push(procedureExperimentRunControlBelow);
+        timeline.push(controlRunInstructionsAbove);
+        timeline.push(procedureExperimentRunControlAbove);
+        break;
+}
 timeline.push(dataSave);
 timeline.push(end);
      
