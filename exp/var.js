@@ -1,7 +1,8 @@
 let trialIterator = 1;
 
-const creditCardHeightRatio = 3;
-const creditCardWidthRatio = 4.025;
+const creditCardRatio = 1.59375; //ratio of width to height
+const creditCardHeightRatio = 320;
+const creditCardWidthRatio = 510;
 const creditCardHeight = (document.body.scrollHeight/creditCardHeightRatio);
 const creditCardWidth = (document.body.scrollWidth/creditCardWidthRatio);
 
