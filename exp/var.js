@@ -1,4 +1,9 @@
-trialIterator = 1;
+let trialIterator = 1;
+
+const creditCardHeightRatio = 3.28125;
+const creditCardWidthRatio = 3.29607;
+const creditCardHeight = (screen.height/creditCardHeightRatio);
+const creditCardWidth = (screen.width/creditCardWidthRatio);
 
 let k;
 
