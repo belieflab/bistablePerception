@@ -61,7 +61,7 @@
     </p>
   </div>
   </div>
-  <button style="float:center; margin:35px; vertical-align:middle" id="submitButton" class="loadMain" onclick="validateConsent()" type="button"><script>consent</script></button></div>
+  <button style="float:center; margin:35px; vertical-align:middle" id="submitButton" class="loadMain" onclick="validateConsent(), submitIntake()" type="button"><script>consent</script></button></div>
   
 <div id="validation" style="display: none">
     <br>
@@ -72,7 +72,7 @@
 
 <div id="load" style="display: none">
 <h3 id='pass'>Alle Validierungsregeln wurden erfolgreich bestanden. Klicken Sie hier, um das Experiment zu laden.</h3>
-<button id="nextButton" class="noCursor" onclick="startExperiment()"><script>load</script></button>
+<button id="nextButton" class="noCursor" onclick="startExperimentGerman()"><script>load</script></button>
 <!-- <p id="nextButton" style="display: none" >please make sure you are in a quiet place. When you are ready to begin, click 'START'</p> -->
 <br>
 </div>

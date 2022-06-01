@@ -661,6 +661,7 @@ let dataSave = {
     // returns cursor functionality
     $(document).ready(function () {
       $("body").addClass("showCursor");
+      closeFullscreen(); // kill fullscreen
     });
   }
 };
