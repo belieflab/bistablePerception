@@ -15,6 +15,7 @@ let instructions0 = {
 let calibration1 = {
   type: "html-keyboard-response",
   stimulus: "<p>First, we need your help to properly adjust your screen:</p>" +
+  "<img height='320px' width='510px' src='stim/creditcard.png'>" +
     "<p> <i> Press spacebar to continue</i> </p>",
   choices: [32]
 };
