@@ -1,5 +1,7 @@
 # Bistable Perception
 
+hi derek
+
 ## Development Guide
 
 #### Install and configure XAMPP:
