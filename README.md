@@ -1,6 +1,6 @@
 # Bistable Perception
 
-hi derek
+this is not right
 
 ## Development Guide
 
